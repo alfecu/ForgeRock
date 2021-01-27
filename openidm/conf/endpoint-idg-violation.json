@@ -1,0 +1,5 @@
+{
+    "file" : "idg/violation.js",
+    "context": "governance/violation/*",
+    "type" : "javascript"
+}

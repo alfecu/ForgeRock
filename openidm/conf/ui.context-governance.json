@@ -1,0 +1,6 @@
+{
+    "enabled" : true,
+    "urlContextRoot" : "/governance",
+    "defaultDir" : "&{launcher.install.location}/governance",
+    "extensionDir" : "&{launcher.install.location}/governance"
+}

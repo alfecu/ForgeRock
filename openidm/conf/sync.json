@@ -1,0 +1,503 @@
+{
+    "mappings" : [
+        {
+            "target" : "managed/SuscribedSKU",
+            "source" : "system/o365TeamsLicenses/subscribedSku",
+            "name" : "systemO365teamslicensesSubscribedSku_managedSuscr",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "systemO365teamslicensesSubscribedSku_managedSuscr",
+            "properties" : [
+                {
+                    "target" : "capabilityStatus",
+                    "source" : "capabilityStatus"
+                },
+                {
+                    "target" : "name",
+                    "source" : "__NAME__"
+                },
+                {
+                    "target" : "skuId",
+                    "source" : "skuId"
+                },
+                {
+                    "target" : "consumedUnits",
+                    "source" : "consumedUnits"
+                },
+                {
+                    "target" : "_id",
+                    "source" : "skuId"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        },
+        {
+            "target" : "managed/user",
+            "source" : "system/O365Platform/__ACCOUNT__",
+            "name" : "O365platform__ACCOUNT___managedUser",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "O365platform__ACCOUNT___managedUser",
+            "properties" : [
+                {
+                    "target" : "userName",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "if (source.userType == \"Guest\")\n  source.mail;\nelse\n  source.userPrincipalName.replace('@forgerocksaseuoutlook.onmicrosoft.com','') ;\n\n"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "givenName",
+                    "source" : "givenName"
+                },
+                {
+                    "target" : "sn",
+                    "source" : "surname"
+                },
+                {
+                    "target" : "mail",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "if (source.userType == \"Guest\")\n  source.mail;\nelse\n  source.userPrincipalName ;\n"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "userType",
+                    "source" : "userType"
+                },
+                {
+                    "target" : "externalUserState",
+                    "source" : "externalUserState"
+                },
+                {
+                    "target" : "country",
+                    "source" : "country"
+                },
+                {
+                    "target" : "_id",
+                    "source" : "_id"
+                },
+                {
+                    "target" : "subscriptionSKU",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nfinal Logger logger = LoggerFactory.getLogger(\"MSLicenses\");\n\n\nif (source != null) {\n  def licenses = []\n  source.assignedLicenses.each { license ->\n    \tlogger.info(\"!!!!!!! subscriptionSKU\" + license)\n      //String queryFilter = \"/skuid eq \\\"\" + license.skuId + \"\\\"\"\n      //def LicenseObj = openidm.query(\"managed/SuscribedSKU\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      licenses << [\"_ref\": \"managed/SuscribedSKU/\" + license.skuId] \n  }\n\n  return licenses\n}\n"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "stateProvince",
+                    "source" : "country"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "UNLINK",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "UNLINK",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED",
+                    "postAction" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nfinal Logger logger = LoggerFactory.getLogger(\"MSLicenses\");\n\n//logger.info(\"<assignedPlans>\")\n//logger.info(\"<assignedPlans.assignedPlans>\" + source.assignedPlans)\nlogger.info(\"**** <assignedPlans.person >\" + source.displayName)\nif (source.assignedPlans != null) {\n  //def assignedPlansTemp = [];\n  source.assignedPlans.each { assignedPlans ->\n      String queryFilter = \"/_refResourceCollection eq \\\"managed/assignedPlans\\\" and /servicePlanId eq \\\"\" + assignedPlans.servicePlanId + \"\\\"\";\n      logger.info(\"***** <assignedPlans.queryFilter >\" + queryFilter)\n      logger.info(\"***** <assignedPlans.end-point >\" + \"managed/user/\" + source._id + \"/assignedPlans\")\n      //\n      ///eq \"managed/assignedPlans\" and  /_refResourceId eq \"d0c0bf27-f310-48ef-a2a3-373dea23f732\"\n      def filterData = openidm.query(\"managed/user/\" + source._id + \"/assignedPlans\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      //\n      def planData = [\n          \"name\" : assignedPlans.service,\n          \"assignedDateTime\" : assignedPlans.assignedDateTime,\n          \"service\" : assignedPlans.service,\n          \"capabilityStatus\" : assignedPlans.capabilityStatus,\n          \"servicePlanId\": assignedPlans.servicePlanId,\n          \"users\" : [\n              \"_ref\" : 'managed/user/' + source._id\n            ]\n          ]\n      //\n      //logger.info(\"***** <assignedPlans.planData >\" + planData)\n      logger.info(\"***** <assignedPlans.filterData >\" + filterData)\n      \n      if (filterData.resultCount == 0) {\n          logger.info(\"***** <assignedPlans.planData >\" + planData)\n          def tempPlanData = openidm.create(\"managed/assignedPlans\", null, planData)\n      } else {\n          // Update\n          logger.info(\"***** <assignedPlans.Updating....\" + filterData.result[0]._id)\n          def tempPlanData = openidm.update(\"managed/assignedPlans/\" + filterData.result[0]._id, null, planData)\n      }\n\n      //assignedPlansTemp << [\"_ref\": \"managed/assignedPlans/\" + source.servicePlanId] // memberUserObj.result[0]._id]\n  }\n\n} else {\n  return []\n}\nlogger.info(\"</assignedPlans>\")"
+                    }
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        },
+        {
+            "target" : "managed/role",
+            "source" : "system/O365Platform/__GROUP__",
+            "name" : "O365platform__GROUP___managedRole",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "O365platform__GROUP___managedRole",
+            "properties" : [
+                {
+                    "target" : "name",
+                    "source" : "__NAME__"
+                },
+                {
+                    "target" : "members",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "if (source != null) {\n  def members = []\n  source.members.each { userId ->\n      //String queryFilter = \"/_id eq \\\"\" + userId + \"\\\"\"\n      //def memberUserObj = openidm.query(\"managed/user\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      members << [\"_ref\": \"managed/user/\" + userId] // memberUserObj.result[0]._id]\n  }\n\n  return members\n}\n"
+                    },
+                    "source" : ""
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "UNLINK",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        },
+        {
+            "target" : "managed/Teams",
+            "source" : "system/O365Platform/team",
+            "name" : "O365platformTeam_managedTeams",
+            "displayName" : "O365platformTeam_managedTeams",
+            "properties" : [
+                {
+                    "target" : "displayName",
+                    "source" : "__NAME__"
+                },
+                {
+                    "target" : "description",
+                    "source" : "description"
+                },
+                {
+                    "target" : "internalID",
+                    "source" : "internalId"
+                },
+                {
+                    "target" : "members",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "if (source != null) {\n  def members = []\n  source.members.each { user ->\n      //String queryFilter = \"/_id eq \\\"\" + userId + \"\\\"\"\n      //def memberUserObj = openidm.query(\"managed/user\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      members << [\"_ref\": \"managed/user/\" + user.userId] // memberUserObj.result[0]._id]\n  }\n\n  return members\n}\n"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "displayName",
+                    "source" : "displayName"
+                },
+                {
+                    "target" : "name",
+                    "source" : "__NAME__"
+                },
+                {
+                    "target" : "_id",
+                    "source" : "_id"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "UNLINK",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ],
+            "onUpdate" : {
+                "type" : "groovy",
+                "globals" : { },
+                "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\nimport groovy.json.JsonBuilder;\nimport groovy.json.JsonSlurper;\n//import java.util.logging.Logger;\n\nfinal Logger logger = LoggerFactory.getLogger(\"Teams.Postupdate\");\nlogger.info(\"<Mapping.Teams.update>\");\n//logger.info (\"Mapping.source.channels  =>\" + source.channels \n\ndef _idChannel = '';\n\nif (source != null) {\n  logger.info(source.displayName);\n  def channels = []\n  source.channels.each() { channel ->\n    logger.info(\"Looking Up => \" + channel.displayName)\n    def queryFilter = \"/_id eq \\\"\" + channel.id + \"\\\"\"\n    def filterData = openidm.query(\"managed/channels/\", [\"_queryFilter\": queryFilter], [\"_id\"])\n    //JsonBuilder moBuilder = new JsonBuilder(filterData)\n    logger.info(\"**** filterData =>\" + filterData)\n    \n    if (filterData.resultCount == 0) {\n      //Values to be sent\n      def channelData = [\n      \"name\" : channel.displayName,\n      \"displayName\" : channel.displayName,\n      \"description\" : channel.description,\n      \"membershipType\" : channel.membershipType,\n      \"teamChannel\" : [\n          \"_ref\" : 'managed/Teams/' + source._id\n        ]\n      ,\n      \"_id\" : channel.id\n      ]\n      def tempChannel = openidm.create(\"managed/channels\", null, channelData)\n      //JsonBuilder assignChannelBuilder = new JsonBuilder(tempChannel)\n      logger.info(\"***====> \" + tempChannel)\n      //logger.info(\"*** Result=>\" + assignChannelBuilder.toPrettyString())\n      // new id Channel\n      _idChannel = tempChannel._id;\n    } else {\n        // get Channel Id\n        logger.info(\"** exists=>\" + filterData.result[0])\n        logger.info(\"** _ID!!!=>\" + filterData.result[0]._id)\n        _idChannel = filterData.result[0]._id\n    }\n\n    logger.info(\"**** _idChannel =>\" + _idChannel)\n    //logger.info(\"Members:\\n\" + channel.members)\n        // members from channels\n      if (channel.members != null) {\n          // retrieve all members\n            def members = []\n                channel.members.each { user ->\n                    members << [\"_ref\": \"managed/user/\" + user.userId] // memberUserObj.result[0]._id]\n            }\n            // add members to Channel MO\n        def membersData = [{\n   //           \"operation\" : \"replace\",\n     //           \"field\": \"members\",\n       //         \"value\": {members}\n        }]\n        //\"_ref\":\"managed/user/94a27e89-317e-4cfc-8809-ca3c68b45c18\")\n        openidm.patch(\"managed/channels/\" + _idChannel, null, \n            [[\"operation\":\"add\", \"field\":\"members\", \"value\": \n            members\n            ]])\n    }\n\n      \n    }\n      //String queryFilter = \"/_id eq \\\"\" + channel.id + \"\\\"\"\n      //def channelInfo = openidm.query(\"managed/channels\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      //members << [\"_ref\": \"managed/channels/\" + userId] // memberUserObj.result[0]._id]\nlogger.info(\"******************\");\n  //return members\n}\nlogger.info(\"</Teams.update>\");\n"
+            },
+            "correlateEmptyTargetSet" : true,
+            "onCreate" : {
+                "type" : "groovy",
+                "globals" : { },
+                "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\nimport groovy.json.JsonBuilder;\nimport groovy.json.JsonSlurper;\n//import java.util.logging.Logger;\n\nfinal Logger logger = LoggerFactory.getLogger(\"Teams.Postupdate\");\nlogger.info(\"<Mapping.Teams.CREATE>\");\n//logger.info (\"Mapping.source.channels  =>\" + source.channels \n\ndef _idChannel = '';\n\nif (source != null) {\n  logger.info(source.displayName);\n  def channels = []\n  source.channels.each() { channel ->\n    logger.info(\"Looking Up => \" + channel.displayName)\n    def queryFilter = \"/_id eq \\\"\" + channel.id + \"\\\"\"\n    def filterData = openidm.query(\"managed/channels/\", [\"_queryFilter\": queryFilter], [\"_id\"])\n    //JsonBuilder moBuilder = new JsonBuilder(filterData)\n    logger.info(\"**** filterData =>\" + filterData)\n    \n    if (filterData.resultCount == 0) {\n      //Values to be sent\n      def channelData = [\n      \"name\" : channel.displayName,\n      \"displayName\" : channel.displayName,\n      \"description\" : channel.description,\n      \"membershipType\" : channel.membershipType,\n      \"teamChannel\" : [\n          \"_ref\" : 'managed/Teams/' + source._id\n        ]\n      ,\n      \"_id\" : channel.id\n      ]\n      def tempChannel = openidm.create(\"managed/channels\", null, channelData)\n      //JsonBuilder assignChannelBuilder = new JsonBuilder(tempChannel)\n      logger.info(\"***====> \" + tempChannel)\n      //logger.info(\"*** Result=>\" + assignChannelBuilder.toPrettyString())\n      // new id Channel\n      _idChannel = tempChannel._id;\n    } else {\n        // get Channel Id\n        logger.info(\"** exists=>\" + filterData.result[0])\n        logger.info(\"** _ID!!!=>\" + filterData.result[0]._id)\n        _idChannel = filterData.result[0]._id\n    }\n\n    logger.info(\"**** _idChannel =>\" + _idChannel)\n    //logger.info(\"Members:\\n\" + channel.members)\n        // members from channels\n      if (channel.members != null) {\n          // retrieve all members\n            def members = []\n                channel.members.each { user ->\n                    members << [\"_ref\": \"managed/user/\" + user.userId] // memberUserObj.result[0]._id]\n            }\n            // add members to Channel MO\n        def membersData = [{\n   //           \"operation\" : \"replace\",\n     //           \"field\": \"members\",\n       //         \"value\": {members}\n        }]\n        //\"_ref\":\"managed/user/94a27e89-317e-4cfc-8809-ca3c68b45c18\")\n        openidm.patch(\"managed/channels/\" + _idChannel, null, \n            [[\"operation\":\"add\", \"field\":\"members\", \"value\": \n            members\n            ]])\n    }\n\n      \n    }\n      //String queryFilter = \"/_id eq \\\"\" + channel.id + \"\\\"\"\n      //def channelInfo = openidm.query(\"managed/channels\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      //members << [\"_ref\": \"managed/channels/\" + userId] // memberUserObj.result[0]._id]\nlogger.info(\"******************\");\n  //return members\n}\nlogger.info(\"</Teams.CREATE>\");\n"
+            }
+        },
+        {
+            "target" : "system/O365Platform/__ACCOUNT__",
+            "source" : "managed/user",
+            "name" : "managedUser_systemO365platform__ACCOUNT__",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "managedUser_systemO365platform__ACCOUNT__",
+            "properties" : [
+                {
+                    "target" : "postalCode",
+                    "source" : "postalCode"
+                },
+                {
+                    "target" : "accountEnabled",
+                    "default" : true
+                },
+                {
+                    "target" : "userPrincipalName",
+                    "source" : "mail"
+                },
+                {
+                    "target" : "displayName",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "source.givenName.toLowerCase() + \" \" + source.sn.toLowerCase();"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "mailNickname",
+                    "default" : "''"
+                },
+                {
+                    "target" : "assignedPlans",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "[];"
+                    },
+                    "source" : ""
+                },
+                {
+                    "target" : "assignedLicenses",
+                    "transform" : {
+                        "type" : "text/javascript",
+                        "globals" : { },
+                        "source" : "[];"
+                    },
+                    "source" : ""
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ],
+            "links" : "O365platform__ACCOUNT___managedUser"
+        }
+    ]
+}

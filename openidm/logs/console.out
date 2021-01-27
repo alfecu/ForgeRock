@@ -1,0 +1,80 @@
+nohup: ignoring input
+Executing ./startup.sh...
+Using OPENIDM_HOME:   /opt/forgerock/openidm
+Using PROJECT_HOME:   /opt/forgerock/openidm
+Using OPENIDM_OPTS:   -Xmx2048m -Xms2048m
+Using LOGGING_CONFIG: -Djava.util.logging.config.file=/opt/forgerock/openidm/conf/logging.properties
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:/opt/forgerock/openidm/bin/felix.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+-> ShellTUI: Unable to read from stdin...exiting.
+[79] Jan 20, 2021 2:03:31.291 AM org.forgerock.openidm.health.HealthService$4 run
+SEVERE: OpenIDM failure during startup, ACTIVE_NOT_READY: Required services not all started [org.forgerock.openidm.audit, org.forgerock.openidm.cluster, org.forgerock.openidm.config.manage, org.forgerock.openidm.internal.service, org.forgerock.openidm.policy, org.forgerock.openidm.provisioner, org.forgerock.openidm.repo.init, org.forgerock.openidm.scheduler.persisted, org.forgerock.openidm.scheduler.memory]
+OpenIDM version "7.0.1" (build: 20200908115748, revision: 9be45fd) jenkins-openidm-release-sustaining%2F7.0.x-6
+OpenIDM ready
+[56] Jan 20, 2021 2:32:18.875 AM org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService getPropertiesToEncrypt
+SEVERE: Failed to parse the config of [org.forgerock.openidm.provisioner.openicf, O365Platform, Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )]-{}: {}
+org.forgerock.openidm.config.enhanced.InternalErrorException: Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )
+	at org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService.getPropertiesToEncrypt(ConnectorInfoProviderService.java:942)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.getPropertiesToEncrypt(ConfigCrypto.java:118)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:174)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:152)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:347)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:327)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.install(JSONConfigInstaller.java:133)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:950)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:884)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.doProcess(DirectoryWatcher.java:489)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.process(DirectoryWatcher.java:365)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.run(DirectoryWatcher.java:316)
+
+[15] Jan 20, 2021 2:32:18.876 AM org.forgerock.openidm.config.logging.LogServiceTracker logEntry
+SEVERE: Bundle: org.apache.felix.fileinstall [26] Failed to install artifact: /opt/forgerock/openidm/conf/provisioner.openicf-O365Platform.json
+org.apache.felix.log.LogException: org.forgerock.openidm.config.enhanced.InternalErrorException: Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )
+	at org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService.getPropertiesToEncrypt(ConnectorInfoProviderService.java:942)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.getPropertiesToEncrypt(ConfigCrypto.java:118)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:174)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:152)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:347)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:327)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.install(JSONConfigInstaller.java:133)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:950)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:884)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.doProcess(DirectoryWatcher.java:489)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.process(DirectoryWatcher.java:365)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.run(DirectoryWatcher.java:316)
+
+[56] Jan 20, 2021 2:33:18.963 AM org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService getPropertiesToEncrypt
+SEVERE: Failed to parse the config of [org.forgerock.openidm.provisioner.openicf, O365Platform, Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )]-{}: {}
+org.forgerock.openidm.config.enhanced.InternalErrorException: Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )
+	at org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService.getPropertiesToEncrypt(ConnectorInfoProviderService.java:942)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.getPropertiesToEncrypt(ConfigCrypto.java:118)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:174)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:152)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:347)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:327)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.install(JSONConfigInstaller.java:133)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:950)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:884)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.doProcess(DirectoryWatcher.java:489)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.process(DirectoryWatcher.java:365)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.run(DirectoryWatcher.java:316)
+
+[15] Jan 20, 2021 2:33:18.964 AM org.forgerock.openidm.config.logging.LogServiceTracker logEntry
+SEVERE: Bundle: org.apache.felix.fileinstall [26] Failed to install artifact: /opt/forgerock/openidm/conf/provisioner.openicf-O365Platform.json
+org.apache.felix.log.LogException: org.forgerock.openidm.config.enhanced.InternalErrorException: Could not find local connector for connectorReference : ConnectorReference( connectorHostRef=#LOCAL bundleName=org.forgerock.openicf.connectors.msgraphapi-connector bundleVersion=[1.5.0.0,1.6.0.0] connectorName=org.forgerock.openicf.connectors.msgraphapi.MSGraphAPIConnector )
+	at org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService.getPropertiesToEncrypt(ConnectorInfoProviderService.java:942)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.getPropertiesToEncrypt(ConfigCrypto.java:118)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:174)
+	at org.forgerock.openidm.config.crypto.ConfigCrypto.encrypt(ConfigCrypto.java:152)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:347)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.setConfig(JSONConfigInstaller.java:327)
+	at org.forgerock.openidm.config.installer.JSONConfigInstaller.install(JSONConfigInstaller.java:133)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:950)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.install(DirectoryWatcher.java:884)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.doProcess(DirectoryWatcher.java:489)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.process(DirectoryWatcher.java:365)
+	at org.apache.felix.fileinstall.internal.DirectoryWatcher.run(DirectoryWatcher.java:316)
+

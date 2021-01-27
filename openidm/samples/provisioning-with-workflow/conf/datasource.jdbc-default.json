@@ -1,0 +1,13 @@
+{
+    "driverClass" : "org.h2.Driver",
+    "jdbcUrl" : "jdbc:h2:file:&{idm.install.dir}/db/activiti/database;MVCC=FALSE;DB_CLOSE_DELAY=0",
+    "databaseName" : "activiti",
+    "username" : "sa",
+    "password" : "sa",
+    "connectionTimeout" : 30000,
+    "connectionPool" : {
+        "type" : "hikari",
+        "minimumIdle" : 1,
+        "maximumPoolSize" : 5
+    }
+}

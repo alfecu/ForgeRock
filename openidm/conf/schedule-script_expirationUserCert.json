@@ -1,0 +1,14 @@
+{
+	"enabled": true,
+	"type": "cron",
+	"schedule": "0 0/10 * * * ?",
+	"concurrentExecution": false,
+	"invokeService": "script",
+	"invokeContext": {
+		"script": {
+			"type": "javascript",
+			"file": "script/idg/expirationCert.js",
+			"certType": "user"
+		}
+	}
+}

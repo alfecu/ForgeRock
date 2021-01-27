@@ -1,0 +1,5 @@
+{
+  "file" : "commons/config.js",
+  "context": "commons/config/*",
+  "type" : "text/javascript"
+}

@@ -1,0 +1,24 @@
+{
+  "_id": "commons",
+  "managedObjectConfig": {
+    "user": {
+      "searchProperties": ["userName"],
+      "exportProperty": "userName"
+    },
+    "role": {
+      "searchProperties": ["name"],
+      "exportProperty": "name"
+    },
+    "assignment": {
+      "searchProperties": ["name"],
+      "exportProperty": "name"
+    }, "Teams": {
+	"searchProperties" : ["displayName"],
+        "exportProperty": "displayName" 
+       } 
+  },
+  "membershipProperties": [
+    "roles",
+    "authzRoles"
+  ]
+}

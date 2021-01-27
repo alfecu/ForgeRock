@@ -1,0 +1,5 @@
+{
+    "file" : "idg/sendNotification.js",
+    "context": "governance/sendNotification/*",
+    "type" : "javascript"
+}

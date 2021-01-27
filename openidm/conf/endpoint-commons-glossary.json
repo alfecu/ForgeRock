@@ -1,0 +1,5 @@
+{
+  "file" : "commons/glossary.js",
+  "context": "commons/glossary/*",
+  "type" : "text/javascript"
+}

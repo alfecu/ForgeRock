@@ -1,0 +1,85 @@
+{
+    "systemSettings" : [
+        {
+            "section" : "General",
+            "fields" : [
+                {
+                    "id" : "allowBulkCertify",
+                    "type" : "boolean",
+                    "value" : true
+                }
+            ]
+        },
+        {
+            "section" : "Display",
+            "fields" : [
+                {
+                    "id" : "userDisplayFormat",
+                    "type" : "string",
+                    "value" : "{{givenName}} {{sn}} ({{userName}})"
+                }
+            ]
+        },
+        {
+            "section" : "Delegation",
+            "fields" : [
+                {
+                    "id" : "delegationEnabled",
+                    "type" : "boolean",
+                    "value" : true
+                },
+                {
+                    "id" : "userDelegate",
+                    "type" : "dropdown",
+                    "value" : "manager"
+                }
+            ]
+        },
+        {
+            "section" : "Risk Level Management",
+            "fields" : [
+                {
+                    "id" : "riskLevel",
+                    "type" : "dblSlider",
+                    "value" : {
+                        "lower" : 5,
+                        "higher" : 6
+                    }
+                }
+            ]
+        },
+        {
+            "section" : "Custom attribute mapping",
+            "fields" : [
+                {
+                    "id" : "userAttrMappings",
+                    "type" : "dropdown",
+                    "attributes" : [
+                        {
+                            "id" : "givenName",
+                            "value" : "givenName"
+                        },
+                        {
+                            "id" : "sn",
+                            "value" : "sn"
+                        },
+                        {
+                            "id" : "mail",
+                            "value" : "mail"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "section" : "Menu Management",
+            "fields" : [
+                {
+                    "id" : "menuManagement",
+                    "type" : "string",
+                    "value" : [ ]
+                }
+            ]
+        }
+    ]
+}

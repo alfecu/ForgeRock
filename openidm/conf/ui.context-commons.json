@@ -1,0 +1,6 @@
+{
+    "enabled" : true,
+    "urlContextRoot" : "/commons",
+    "defaultDir" : "&{launcher.install.location}/commons",
+    "extensionDir" : "&{launcher.install.location}/commons"
+}

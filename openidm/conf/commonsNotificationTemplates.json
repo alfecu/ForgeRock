@@ -1,0 +1,11 @@
+{
+  "_id": "commonsNotificationTemplates",
+  "commons/HELLO_WORLD" : {
+    "from" : "test@frcommons.com",
+    "to" : "{{toEmailAddress}}",
+    "cc": "",
+    "subject" : "Commons notification: hello",
+    "type" : "text/html",
+    "body" : "<html><body>Hello, world.</body></html>"
+  }
+}

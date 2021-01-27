@@ -1,0 +1,548 @@
+[14] Jan 27, 2021 11:02:10.481 PM org.forgerock.openidm.config.persistence.Activator start
+INFO: OpenIDM is starting from /opt/forgerock/openidm
+[14] Jan 27, 2021 11:02:11.361 PM org.forgerock.openidm.datasource.jdbc.Activator start
+INFO: Registered DataSourceServiceFactory service
+[14] Jan 27, 2021 11:02:11.362 PM org.forgerock.openidm.datasource.jdbc.Activator start
+INFO: Registered DataSourceServicePool service
+[14] Jan 27, 2021 11:02:11.362 PM org.apache.aries.spifly.BaseActivator log
+INFO: Examining bundle for SPI provider: groovy
+[14] Jan 27, 2021 11:02:11.364 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_18.0:0/META-INF/services/org.codehaus.groovy.transform.ASTTransformation
+[14] Jan 27, 2021 11:02:11.365 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_8.0:0/META-INF/services/org.codehaus.groovy.transform.ASTTransformation
+[14] Jan 27, 2021 11:02:11.365 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_19.0:0/META-INF/services/org.codehaus.groovy.transform.ASTTransformation
+[14] Jan 27, 2021 11:02:11.365 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_5.0:0/META-INF/services/org.apache.groovy.json.FastStringServiceFactory
+[14] Jan 27, 2021 11:02:11.387 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.apache.groovy.json.DefaultFastStringServiceFactory
+[14] Jan 27, 2021 11:02:11.388 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.apache.groovy.json.FastStringServiceFactory in bundle groovy
+[14] Jan 27, 2021 11:02:11.388 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_12.0:0/META-INF/services/javax.script.ScriptEngineFactory
+[14] Jan 27, 2021 11:02:11.697 PM org.forgerock.openidm.config.persistence.ConfigBootstrapHelper getBootConfig
+INFO: Bootstrapping with settings from configuration file /opt/forgerock/openidm/conf/repo.jdbc.json
+[14] Jan 27, 2021 11:02:11.932 PM org.forgerock.openidm.config.persistence.ConfigBootstrapHelper getBootConfig
+INFO: Bootstrapping with settings from configuration file /opt/forgerock/openidm/conf/datasource.jdbc-default.json
+[14] Jan 27, 2021 11:02:11.932 PM org.forgerock.openidm.repo.jdbc.impl.Activator start
+INFO: Bootstrapping JDBC repository
+[14] Jan 27, 2021 11:02:12.025 PM com.zaxxer.hikari.HikariDataSource <init>
+INFO: 9067ea8f-4311-45c2-98b1-fbbe702cc531 - Starting...
+[14] Jan 27, 2021 11:02:12.088 PM com.zaxxer.hikari.HikariDataSource <init>
+INFO: 9067ea8f-4311-45c2-98b1-fbbe702cc531 - Start completed.
+[14] Jan 27, 2021 11:02:12.529 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService lambda$initDataSourceService$0
+INFO: Successfully acquired datasource openidm connection
+[14] Jan 27, 2021 11:02:12.654 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.655 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching disabled.
+[14] Jan 27, 2021 11:02:12.655 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.672 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.673 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.673 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.673 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.674 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.674 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.674 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.674 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.675 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.675 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.675 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.676 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:12.710 PM org.forgerock.openidm.repo.jdbc.impl.Activator start
+INFO: Registered bootstrap repository service
+[14] Jan 27, 2021 11:02:13.036 PM org.apache.aries.blueprint.container.BlueprintExtender start
+INFO: No quiesce support is available, so blueprint components will not participate in quiesce operations
+[14] Jan 27, 2021 11:02:13.755 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: EventAdmin support enabled, servlet events will be posted to topics.
+[14] Jan 27, 2021 11:02:13.755 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: LogService support enabled, log events will be created.
+[14] Jan 27, 2021 11:02:13.756 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: Pax Web started
+[14] Jan 27, 2021 11:02:13.864 PM org.apache.aries.spifly.BaseActivator log
+INFO: Examining bundle for SPI provider: org.eclipse.jetty.websocket.server
+[14] Jan 27, 2021 11:02:13.864 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_153.0:0/META-INF/services/javax.servlet.ServletContainerInitializer
+[14] Jan 27, 2021 11:02:13.865 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.server.NativeWebSocketServletContainerInitializer
+[14] Jan 27, 2021 11:02:13.866 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@151de773
+[14] Jan 27, 2021 11:02:13.866 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: javax.servlet.ServletContainerInitializer in bundle org.eclipse.jetty.websocket.server
+[14] Jan 27, 2021 11:02:13.892 PM org.forgerock.openidm.schema.impl.SchemaServiceImpl activate
+INFO: OpenIDM Schema Service is activated.
+[14] Jan 27, 2021 11:02:14.072 PM org.apache.aries.spifly.BaseActivator log
+INFO: Examining bundle for SPI provider: org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.072 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_182.0:0/META-INF/services/org.eclipse.jetty.websocket.api.extensions.Extension
+[14] Jan 27, 2021 11:02:14.078 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.common.extensions.identity.IdentityExtension
+[14] Jan 27, 2021 11:02:14.079 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@7083b65f
+[14] Jan 27, 2021 11:02:14.079 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.websocket.api.extensions.Extension in bundle org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.079 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.common.extensions.fragment.FragmentExtension
+[14] Jan 27, 2021 11:02:14.080 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@7eb96da1
+[14] Jan 27, 2021 11:02:14.080 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.websocket.api.extensions.Extension in bundle org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.201 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension
+[14] Jan 27, 2021 11:02:14.202 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@1327d669
+[14] Jan 27, 2021 11:02:14.202 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.websocket.api.extensions.Extension in bundle org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.202 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension
+[14] Jan 27, 2021 11:02:14.202 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@48c70dab
+[14] Jan 27, 2021 11:02:14.203 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.websocket.api.extensions.Extension in bundle org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.203 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.websocket.common.extensions.compress.XWebkitDeflateFrameExtension
+[14] Jan 27, 2021 11:02:14.203 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@3cbdbf09
+[14] Jan 27, 2021 11:02:14.203 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.websocket.api.extensions.Extension in bundle org.eclipse.jetty.websocket.common
+[14] Jan 27, 2021 11:02:14.346 PM org.forgerock.openidm.health.HealthService activate
+INFO: OpenIDM Health Service component is activated.
+[14] Jan 27, 2021 11:02:14.639 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @9141ms to org.eclipse.jetty.util.log.JavaUtilLog
+[14] Jan 27, 2021 11:02:14.885 PM org.forgerock.openidm.consent.impl.ConsentServiceV1 <init>
+INFO: OpenIDM Consent Service is activated.
+[14] Jan 27, 2021 11:02:14.906 PM org.forgerock.openidm.consent.impl.ConsentServiceV1 <init>
+INFO: OpenIDM Consent Service is activated.
+[14] Jan 27, 2021 11:02:14.906 PM org.forgerock.openidm.consent.impl.ConsentServiceV2 <init>
+INFO: OpenIDM Consent Service (v2) is activated.
+[14] Jan 27, 2021 11:02:15.278 PM org.forgerock.openidm.config.persistence.ConfigInstallStarter activate
+INFO: Services ready to handle config install.
+[14] Jan 27, 2021 11:02:15.294 PM org.forgerock.openidm.config.installer.JSONConfigInstaller getConfigurationAdmin
+INFO: ConfigAdmin service detected by JSON configuration listener
+[14] Jan 27, 2021 11:02:15.295 PM org.forgerock.openidm.config.persistence.ConfigBootstrapHelper installAllConfig
+INFO: Configuration from file enabled
+[14] Jan 27, 2021 11:02:15.336 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.337 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching disabled.
+[14] Jan 27, 2021 11:02:15.337 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.337 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.337 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.338 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.338 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.338 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.338 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.338 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.339 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.339 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.339 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.339 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.344 PM org.forgerock.openidm.repo.jdbc.impl.GenericTableHandler <init>
+INFO: JDBC statement batching enabled, maximum batch size 100
+[14] Jan 27, 2021 11:02:15.351 PM org.forgerock.openidm.repo.jdbc.impl.JDBCRepoService activate
+INFO: Repository started.
+[31] Jan 27, 2021 11:02:15.789 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-certificationList
+[31] Jan 27, 2021 11:02:15.843 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.emailTemplate factory PID forgottenUsername
+[31] Jan 27, 2021 11:02:15.855 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID api
+[31] Jan 27, 2021 11:02:15.867 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.provisioner.openicf factory PID o365TeamsLicenses
+[31] Jan 27, 2021 11:02:15.896 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui factory PID profile
+[31] Jan 27, 2021 11:02:15.912 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-managedObjectConfig
+[31] Jan 27, 2021 11:02:15.917 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_escalateUserCert
+[31] Jan 27, 2021 11:02:15.958 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-sendNotification
+[31] Jan 27, 2021 11:02:15.969 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID enduser
+[31] Jan 27, 2021 11:02:15.975 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-userEventData
+[31] Jan 27, 2021 11:02:15.983 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminDashboard
+[31] Jan 27, 2021 11:02:15.986 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID commons-glossary
+[31] Jan 27, 2021 11:02:15.988 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-notification
+[31] Jan 27, 2021 11:02:16.012 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.emailTemplate factory PID welcome
+[31] Jan 27, 2021 11:02:16.018 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-activePolicyScan
+[31] Jan 27, 2021 11:02:16.019 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.selfservice factory PID username
+[31] Jan 27, 2021 11:02:16.023 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID gettasksview
+[31] Jan 27, 2021 11:02:16.030 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID commons-runJavaScript
+[31] Jan 27, 2021 11:02:16.052 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-remediation
+[31] Jan 27, 2021 11:02:16.056 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.provisioner.openicf factory PID O365Platform
+[31] Jan 27, 2021 11:02:16.071 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID getavailableuserstoassign
+[31] Jan 27, 2021 11:02:16.125 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-expressionParser
+[31] Jan 27, 2021 11:02:16.183 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.notification factory PID profileUpdate
+[34] Jan 27, 2021 11:02:16.243 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8080]
+[34] Jan 27, 2021 11:02:16.243 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8443]
+[34] Jan 27, 2021 11:02:16.243 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8444]
+[31] Jan 27, 2021 11:02:16.245 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID getprocessesforuser
+[31] Jan 27, 2021 11:02:16.248 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.emailTemplate factory PID resetPassword
+[34] Jan 27, 2021 11:02:16.265 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.forgerock.openidm.servlet-registrator [236]] to http service
+[31] Jan 27, 2021 11:02:16.334 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.servletfilter factory PID cors
+[31] Jan 27, 2021 11:02:16.364 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui factory PID themeconfig
+[31] Jan 27, 2021 11:02:16.366 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.servletfilter factory PID upload
+[31] Jan 27, 2021 11:02:16.380 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-triggeredCertification
+[31] Jan 27, 2021 11:02:16.382 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminCertEventDetails
+[31] Jan 27, 2021 11:02:16.395 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID commons-workflow
+[31] Jan 27, 2021 11:02:16.397 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID repairMetadata
+[31] Jan 27, 2021 11:02:16.398 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID commons-config
+[31] Jan 27, 2021 11:02:16.410 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.selfservice factory PID reset
+[31] Jan 27, 2021 11:02:16.411 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui factory PID dashboard
+[31] Jan 27, 2021 11:02:16.425 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID mappingDetails
+[34] Jan 27, 2021 11:02:16.430 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=commons, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/commons",%0A    "defaultDir" : "&{launcher.install.location}/commons",%0A    "extensionDir" : "&{launcher.install.location}/commons"%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-commons.json, service.pid=org.forgerock.openidm.ui.context.7670f3f3-6de7-4d2a-8996-d77bf67f56f4, _rev=0, component.id=129, _id=org.forgerock.openidm.ui.context.7670f3f3-6de7-4d2a-8996-d77bf67f56f4}
+[31] Jan 27, 2021 11:02:16.431 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.emailTemplate factory PID registration
+[31] Jan 27, 2021 11:02:16.494 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminCertification
+[31] Jan 27, 2021 11:02:16.516 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_expirationPolicyExceptions
+[31] Jan 27, 2021 11:02:16.533 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-certification
+[34] Jan 27, 2021 11:02:16.559 PM org.ops4j.pax.web.utils.ServletContainerInitializerScanner scanBundles
+INFO: will add org.eclipse.jetty.websocket.server.NativeWebSocketServletContainerInitializer to ServletContainerInitializers
+[31] Jan 27, 2021 11:02:16.583 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminPolicy
+[31] Jan 27, 2021 11:02:16.587 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID commons
+[34] Jan 27, 2021 11:02:16.588 PM org.ops4j.pax.web.utils.ServletContainerInitializerScanner scanBundles
+INFO: added ServletContainerInitializer: org.eclipse.jetty.websocket.server.NativeWebSocketServletContainerInitializer
+[31] Jan 27, 2021 11:02:16.598 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-certify
+[31] Jan 27, 2021 11:02:16.599 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.servletfilter factory PID payload
+[31] Jan 27, 2021 11:02:16.622 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID commons-managed
+[31] Jan 27, 2021 11:02:16.646 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.process factory PID access
+[34] Jan 27, 2021 11:02:16.665 PM org.ops4j.pax.web.service.jetty.internal.HttpServiceContext <init>
+INFO: registering context org.ops4j.pax.web.service.internal.DefaultSharedWebContainerContext@58d9c563, with context-name: 
+[31] Jan 27, 2021 11:02:16.672 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_expirationObjectCert
+[31] Jan 27, 2021 11:02:16.721 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID oauthproxy
+[31] Jan 27, 2021 11:02:16.737 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminCertList
+[31] Jan 27, 2021 11:02:16.738 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID oauth
+[31] Jan 27, 2021 11:02:16.739 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-policyScan
+[31] Jan 27, 2021 11:02:16.751 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.emailTemplate factory PID updatePassword
+[31] Jan 27, 2021 11:02:16.753 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui factory PID configuration
+[31] Jan 27, 2021 11:02:16.755 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID linkedView
+[31] Jan 27, 2021 11:02:16.768 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID validateQueryFilter
+[31] Jan 27, 2021 11:02:16.811 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-scheduledUserCertification
+[31] Jan 27, 2021 11:02:16.832 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID updateInternalUserAndInternalRoleEntries
+[31] Jan 27, 2021 11:02:16.833 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-adminCancelCert
+[34] Jan 27, 2021 11:02:16.841 PM org.eclipse.jetty.websocket.server.WebSocketServerFactory findDecoratedObjectFactory
+INFO: No DecoratedObjectFactory provided, using new org.eclipse.jetty.util.DecoratedObjectFactory[decorators=1]
+[34] Jan 27, 2021 11:02:16.844 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: DefaultSessionIdManager workerName=node0
+[34] Jan 27, 2021 11:02:16.844 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: No SessionScavenger set, using defaults
+[34] Jan 27, 2021 11:02:16.845 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
+INFO: node0 Scavenging every 660000ms
+[31] Jan 27, 2021 11:02:16.845 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_adminDashboard
+[31] Jan 27, 2021 11:02:16.847 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_escalateObjectCert
+[31] Jan 27, 2021 11:02:16.848 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-getRelationshipObjects
+[31] Jan 27, 2021 11:02:16.871 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.datasource.jdbc factory PID default
+[34] Jan 27, 2021 11:02:16.877 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started HttpServiceContext{httpContext=org.ops4j.pax.web.service.internal.DefaultSharedWebContainerContext@58d9c563}
+[34] Jan 27, 2021 11:02:16.878 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.4.26.v20200117; built: 2020-01-17T12:35:33.676Z; git: 7b38981d25d14afb4a12ff1f2596756144edf695; jvm 11.0.9.1+1-LTS
+[31] Jan 27, 2021 11:02:16.915 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID removeRepoPathFromRelationships
+[34] Jan 27, 2021 11:02:16.955 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started 0.0.0.0:8080@7ee9d20a{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+[31] Jan 27, 2021 11:02:16.985 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-certificationEventDetails
+[31] Jan 27, 2021 11:02:16.989 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_expirationUserCert
+[31] Jan 27, 2021 11:02:16.997 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.notification factory PID passwordUpdate
+[31] Jan 27, 2021 11:02:16.997 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_expirationPolicyViolations
+[31] Jan 27, 2021 11:02:17.013 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID governance
+[34] Jan 27, 2021 11:02:17.014 PM org.eclipse.jetty.util.ssl.SslContextFactory load
+INFO: x509=X509@b5d9e85(selfservice,h=[],w=[]) for Server@61e0d4da[provider=null,keyStore=file:///opt/forgerock/openidm/security/keystore.jceks,trustStore=file:///opt/forgerock/openidm/security/truststore]
+[34] Jan 27, 2021 11:02:17.014 PM org.eclipse.jetty.util.ssl.SslContextFactory load
+INFO: x509=X509@62ed7d5(openidm-localhost,h=[],w=[]) for Server@61e0d4da[provider=null,keyStore=file:///opt/forgerock/openidm/security/keystore.jceks,trustStore=file:///opt/forgerock/openidm/security/truststore]
+[31] Jan 27, 2021 11:02:17.063 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.ui.context factory PID admin
+[31] Jan 27, 2021 11:02:17.065 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-systemSettings
+[31] Jan 27, 2021 11:02:17.094 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.schedule factory PID script_escalationPolicyViolations
+[31] Jan 27, 2021 11:02:17.095 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-violation
+[31] Jan 27, 2021 11:02:17.113 PM org.forgerock.openidm.config.installer.JSONConfigInstaller parsePid
+INFO: Configuring service PID org.forgerock.openidm.endpoint factory PID idg-dashboard
+[14] Jan 27, 2021 11:02:17.117 PM org.forgerock.openidm.external.rest.RestService activate
+INFO: External REST connectivity started.
+[14] Jan 27, 2021 11:02:17.185 PM org.forgerock.openidm.idp.IdentityProviderService activate
+INFO: OpenIDM Identity Provider Service is activated.
+[14] Jan 27, 2021 11:02:17.227 PM org.forgerock.openidm.maintenance.impl.MaintenanceService activate
+INFO: Maintenance service started.
+[14] Jan 27, 2021 11:02:17.307 PM org.apache.aries.spifly.BaseActivator log
+INFO: Examining bundle for SPI provider: org.eclipse.jetty.http
+[14] Jan 27, 2021 11:02:17.307 PM org.apache.aries.spifly.BaseActivator log
+INFO: Found SPI resource: bundle://e8a08bd6-278f-4479-9940-09267d2f0177_326.0:0/META-INF/services/org.eclipse.jetty.http.HttpFieldPreEncoder
+[14] Jan 27, 2021 11:02:17.307 PM org.apache.aries.spifly.BaseActivator log
+INFO: Loaded SPI provider: class org.eclipse.jetty.http.Http1FieldPreEncoder
+[14] Jan 27, 2021 11:02:17.308 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered service: org.apache.felix.framework.ServiceRegistrationImpl@3539e191
+[14] Jan 27, 2021 11:02:17.308 PM org.apache.aries.spifly.BaseActivator log
+INFO: Registered provider: org.eclipse.jetty.http.HttpFieldPreEncoder in bundle org.eclipse.jetty.http
+[34] Jan 27, 2021 11:02:17.925 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:17.925 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:17.925 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:17.929 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started 0.0.0.0:8443@6621c615{SSL,[ssl, http/1.1]}{0.0.0.0:8443}
+[34] Jan 27, 2021 11:02:17.931 PM org.eclipse.jetty.util.ssl.SslContextFactory load
+INFO: x509=X509@224ec28(selfservice,h=[],w=[]) for Server@1178f6f5[provider=null,keyStore=file:///opt/forgerock/openidm/security/keystore.jceks,trustStore=file:///opt/forgerock/openidm/security/truststore]
+[34] Jan 27, 2021 11:02:17.931 PM org.eclipse.jetty.util.ssl.SslContextFactory load
+INFO: x509=X509@496419e7(openidm-localhost,h=[],w=[]) for Server@1178f6f5[provider=null,keyStore=file:///opt/forgerock/openidm/security/keystore.jceks,trustStore=file:///opt/forgerock/openidm/security/truststore]
+[34] Jan 27, 2021 11:02:18.368 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:18.368 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:18.369 PM org.eclipse.jetty.util.ssl.SslContextFactory processIncludeCipherSuites
+INFO: No Cipher matching 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' is supported
+[34] Jan 27, 2021 11:02:18.387 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started 0.0.0.0:8444@66fce774{SSL,[ssl, http/1.1]}{0.0.0.0:8444}
+[34] Jan 27, 2021 11:02:18.388 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @12889ms
+[34] Jan 27, 2021 11:02:18.394 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=governance, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/governance",%0A    "defaultDir" : "&{launcher.install.location}/governance",%0A    "extensionDir" : "&{launcher.install.location}/governance"%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-governance.json, service.pid=org.forgerock.openidm.ui.context.0eec9f75-1322-4807-a3ae-cb995db8da62, _rev=0, component.id=130, _id=org.forgerock.openidm.ui.context.0eec9f75-1322-4807-a3ae-cb995db8da62}
+[34] Jan 27, 2021 11:02:18.396 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=enduser, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/",%0A    "defaultDir" : "&{idm.install.dir}/ui/enduser",%0A    "responseHeaders" : {%0A        "X-Frame-Options" : "DENY"%0A    }%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-enduser.json, service.pid=org.forgerock.openidm.ui.context.84582d21-8d00-420d-9c6f-b8c34ad980ca, _rev=0, component.id=142, _id=org.forgerock.openidm.ui.context.84582d21-8d00-420d-9c6f-b8c34ad980ca}
+[34] Jan 27, 2021 11:02:18.399 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=admin, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/admin",%0A    "defaultDir" : "&{idm.install.dir}/ui/admin/default",%0A    "extensionDir" : "&{idm.install.dir}/ui/admin/extension",%0A    "responseHeaders" : {%0A        "X-Frame-Options" : "DENY"%0A    }%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-admin.json, service.pid=org.forgerock.openidm.ui.context.c4335d92-a29c-4bf9-97c2-7d09f8d3743d, _rev=0, component.id=143, _id=org.forgerock.openidm.ui.context.c4335d92-a29c-4bf9-97c2-7d09f8d3743d}
+[34] Jan 27, 2021 11:02:18.400 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=api, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/api",%0A    "defaultDir" : "&{idm.install.dir}/ui/api/default",%0A    "extensionDir" : "&{idm.install.dir}/ui/api/extension"%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-api.json, service.pid=org.forgerock.openidm.ui.context.d5007fdd-8f56-4f5e-8067-9b5f09871a50, _rev=0, component.id=144, _id=org.forgerock.openidm.ui.context.d5007fdd-8f56-4f5e-8067-9b5f09871a50}
+[34] Jan 27, 2021 11:02:18.403 PM org.forgerock.openidm.servlet.resources.ResourceServlet activate
+INFO: Activating resource servlet with configuration {config.factory-pid=oauth, component.name=org.forgerock.openidm.ui.context, jsonconfig={%0A    "enabled" : true,%0A    "urlContextRoot" : "/oauthReturn",%0A    "defaultDir" : "&{idm.install.dir}/ui/oauth/default",%0A    "extensionDir" : "&{idm.install.dir}/ui/oauth/extension"%0A}, service.factoryPid=org.forgerock.openidm.ui.context, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/ui.context-oauth.json, service.pid=org.forgerock.openidm.ui.context.6e2559b0-759c-420e-b02d-70dee7548627, _rev=0, component.id=145, _id=org.forgerock.openidm.ui.context.6e2559b0-759c-420e-b02d-70dee7548627}
+[14] Jan 27, 2021 11:02:18.403 PM org.forgerock.openidm.servlet.internal.ErrorServletComponent activate
+INFO: Registered servlet at /error
+[14] Jan 27, 2021 11:02:18.404 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerErrorPage
+INFO: Successfully registered global servlet error handler /error
+[34] Jan 27, 2021 11:02:18.430 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Activating servlet registrator with configuration {config.factory-pid=upload, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "maxRequestSizeInMegabytes" : 50%0A    },%0A    "urlPatterns" : [%0A        "&{openidm.servlet.upload.alias}/*"%0A    ],%0A    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-upload.json, service.pid=org.forgerock.openidm.servletfilter.534be52f-247b-4597-9fee-3bd8f9441384, _rev=0, component.id=89, _id=org.forgerock.openidm.servletfilter.534be52f-247b-4597-9fee-3bd8f9441384}
+[34] Jan 27, 2021 11:02:18.430 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.forgerock.openidm.jetty.LargePayloadServletFilter
+[34] Jan 27, 2021 11:02:18.431 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.437 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilter
+INFO: Successfully registered servlet filter { "classPathURLs": [  ], "systemProperties": {  }, "requestAttributes": {  }, "scriptExtensions": {  }, "initParams": { "maxRequestSizeInMegabytes": 50 }, "urlPatterns": [ "/upload/*" ], "filterClass": "org.forgerock.openidm.jetty.LargePayloadServletFilter" }
+[14] Jan 27, 2021 11:02:18.456 PM org.forgerock.openidm.servlet.internal.ServletConnectionFactory activate
+INFO: Servlet ConnectionFactory created.
+[34] Jan 27, 2021 11:02:18.462 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Successfully registered servlet filter {config.factory-pid=upload, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "maxRequestSizeInMegabytes" : 50%0A    },%0A    "urlPatterns" : [%0A        "&{openidm.servlet.upload.alias}/*"%0A    ],%0A    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-upload.json, service.pid=org.forgerock.openidm.servletfilter.534be52f-247b-4597-9fee-3bd8f9441384, _rev=0, component.id=89, _id=org.forgerock.openidm.servletfilter.534be52f-247b-4597-9fee-3bd8f9441384}
+[34] Jan 27, 2021 11:02:18.463 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Activating servlet registrator with configuration {config.factory-pid=payload, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "maxRequestSizeInMegabytes" : 5%0A    },%0A    "urlPatterns" : [%0A        "&{openidm.servlet.alias}/*"%0A    ],%0A    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-payload.json, service.pid=org.forgerock.openidm.servletfilter.f0780869-c0ad-47ad-9b71-da17c8ff961b, _rev=0, component.id=90, _id=org.forgerock.openidm.servletfilter.f0780869-c0ad-47ad-9b71-da17c8ff961b}
+[34] Jan 27, 2021 11:02:18.464 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.forgerock.openidm.jetty.LargePayloadServletFilter
+[34] Jan 27, 2021 11:02:18.464 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.464 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.forgerock.openidm.jetty.LargePayloadServletFilter
+[34] Jan 27, 2021 11:02:18.464 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.465 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilter
+INFO: Successfully registered servlet filter { "classPathURLs": [  ], "systemProperties": {  }, "requestAttributes": {  }, "scriptExtensions": {  }, "initParams": { "maxRequestSizeInMegabytes": 5 }, "urlPatterns": [ "/openidm/*" ], "filterClass": "org.forgerock.openidm.jetty.LargePayloadServletFilter" }
+[34] Jan 27, 2021 11:02:18.465 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Successfully registered servlet filter {config.factory-pid=payload, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "maxRequestSizeInMegabytes" : 5%0A    },%0A    "urlPatterns" : [%0A        "&{openidm.servlet.alias}/*"%0A    ],%0A    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-payload.json, service.pid=org.forgerock.openidm.servletfilter.f0780869-c0ad-47ad-9b71-da17c8ff961b, _rev=0, component.id=90, _id=org.forgerock.openidm.servletfilter.f0780869-c0ad-47ad-9b71-da17c8ff961b}
+[34] Jan 27, 2021 11:02:18.466 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Activating servlet registrator with configuration {config.factory-pid=cors, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "allowedOrigins" : "https://localhost:&{openidm.port.https}",%0A        "allowedMethods" : "GET,POST,PUT,DELETE,PATCH",%0A        "allowedHeaders" : "accept,x-openidm-password,x-openidm-nosession,x-openidm-username,content-type,origin,x-requested-with",%0A        "allowCredentials" : true,%0A        "chainPreflight" : false%0A    },%0A    "urlPatterns" : [%0A        "/*"%0A    ],%0A    "filterClass" : "org.eclipse.jetty.servlets.CrossOriginFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-cors.json, service.pid=org.forgerock.openidm.servletfilter.8270c446-7956-4f36-a594-3e1ed0739766, _rev=0, component.id=91, _id=org.forgerock.openidm.servletfilter.8270c446-7956-4f36-a594-3e1ed0739766}
+[34] Jan 27, 2021 11:02:18.466 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.forgerock.openidm.jetty.LargePayloadServletFilter
+[34] Jan 27, 2021 11:02:18.466 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.467 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.forgerock.openidm.jetty.LargePayloadServletFilter
+[34] Jan 27, 2021 11:02:18.467 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.467 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Using filter class: org.eclipse.jetty.servlets.CrossOriginFilter
+[34] Jan 27, 2021 11:02:18.468 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilterWithWebContainer
+INFO: Added URLs {  })) to filter classpath
+[34] Jan 27, 2021 11:02:18.472 PM org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton registerFilter
+INFO: Successfully registered servlet filter { "classPathURLs": [  ], "systemProperties": {  }, "requestAttributes": {  }, "scriptExtensions": {  }, "initParams": { "allowedOrigins": "https://localhost:8443", "allowedMethods": "GET,POST,PUT,DELETE,PATCH", "allowedHeaders": "accept,x-openidm-password,x-openidm-nosession,x-openidm-username,content-type,origin,x-requested-with", "allowCredentials": true, "chainPreflight": false }, "urlPatterns": [ "/*" ], "filterClass": "org.eclipse.jetty.servlets.CrossOriginFilter" }
+[34] Jan 27, 2021 11:02:18.499 PM org.forgerock.openidm.servletregistration.impl.ServletFilterConfiguration activate
+INFO: Successfully registered servlet filter {config.factory-pid=cors, component.name=org.forgerock.openidm.servletfilter, jsonconfig={%0A    "classPathURLs" : [ ],%0A    "systemProperties" : { },%0A    "requestAttributes" : { },%0A    "scriptExtensions" : { },%0A    "initParams" : {%0A        "allowedOrigins" : "https://localhost:&{openidm.port.https}",%0A        "allowedMethods" : "GET,POST,PUT,DELETE,PATCH",%0A        "allowedHeaders" : "accept,x-openidm-password,x-openidm-nosession,x-openidm-username,content-type,origin,x-requested-with",%0A        "allowCredentials" : true,%0A        "chainPreflight" : false%0A    },%0A    "urlPatterns" : [%0A        "/*"%0A    ],%0A    "filterClass" : "org.eclipse.jetty.servlets.CrossOriginFilter"%0A}, service.factoryPid=org.forgerock.openidm.servletfilter, felix.fileinstall.filename=file:/opt/forgerock/openidm/conf/servletfilter-cors.json, service.pid=org.forgerock.openidm.servletfilter.8270c446-7956-4f36-a594-3e1ed0739766, _rev=0, component.id=91, _id=org.forgerock.openidm.servletfilter.8270c446-7956-4f36-a594-3e1ed0739766}
+[34] Jan 27, 2021 11:02:18.501 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.forgerock.openidm.httpcontext [28]] to http service
+[34] Jan 27, 2021 11:02:18.519 PM org.forgerock.openidm.http.ContextRegistrator activateSecurityConfigurators
+INFO: Activated security configurator org.forgerock.openidm.http.internal.JettySecurityConfigurator
+[34] Jan 27, 2021 11:02:18.519 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.apache.felix.webconsole [222]] to http service
+[14] Jan 27, 2021 11:02:18.522 PM org.forgerock.openidm.router.impl.JsonResourceRouterService activate
+INFO: IDMConnectionFactory service activated.
+[14] Jan 27, 2021 11:02:18.529 PM org.forgerock.openidm.script.impl.ScriptRegistryService bindConnectionFactory
+INFO: Resource functions are enabled
+[14] Jan 27, 2021 11:02:18.530 PM org.forgerock.openidm.script.impl.ScriptRegistryService bindCryptoService
+INFO: Crypto functions are enabled
+[14] Jan 27, 2021 11:02:18.532 PM org.forgerock.openidm.script.impl.ScriptRegistryService activate
+INFO: OpenIDM Script Service component is activated.
+[34] Jan 27, 2021 11:02:18.575 PM org.ops4j.pax.web.utils.ServletContainerInitializerScanner scanBundles
+INFO: will add org.eclipse.jetty.websocket.server.NativeWebSocketServletContainerInitializer to ServletContainerInitializers
+[34] Jan 27, 2021 11:02:18.575 PM org.ops4j.pax.web.utils.ServletContainerInitializerScanner scanBundles
+INFO: added ServletContainerInitializer: org.eclipse.jetty.websocket.server.NativeWebSocketServletContainerInitializer
+[34] Jan 27, 2021 11:02:18.575 PM org.ops4j.pax.web.service.jetty.internal.HttpServiceContext <init>
+INFO: registering context DefaultHttpContext [bundle=org.apache.felix.webconsole [222], contextID=custom], with context-name: 
+[34] Jan 27, 2021 11:02:18.577 PM org.eclipse.jetty.websocket.server.WebSocketServerFactory findDecoratedObjectFactory
+INFO: No DecoratedObjectFactory provided, using new org.eclipse.jetty.util.DecoratedObjectFactory[decorators=1]
+[34] Jan 27, 2021 11:02:18.586 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started HttpServiceContext{httpContext=DefaultHttpContext [bundle=org.apache.felix.webconsole [222], contextID=custom]}
+[14] Jan 27, 2021 11:02:19.903 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "validateQueryFilter" component is activated.
+[14] Jan 27, 2021 11:02:19.928 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "repairMetadata" component is activated.
+[14] Jan 27, 2021 11:02:19.974 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-remediation" component is activated.
+[14] Jan 27, 2021 11:02:19.988 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "commons-glossary" component is activated.
+[14] Jan 27, 2021 11:02:20.034 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminPolicy" component is activated.
+[14] Jan 27, 2021 11:02:20.321 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-certify" component is activated.
+[14] Jan 27, 2021 11:02:20.331 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "commons-runJavaScript" component is activated.
+[14] Jan 27, 2021 11:02:20.362 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-certificationEventDetails" component is activated.
+[14] Jan 27, 2021 11:02:20.393 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-triggeredCertification" component is activated.
+[14] Jan 27, 2021 11:02:20.409 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "updateInternalUserAndInternalRoleEntries" component is activated.
+[14] Jan 27, 2021 11:02:20.432 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-scheduledUserCertification" component is activated.
+[14] Jan 27, 2021 11:02:20.477 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-userEventData" component is activated.
+[14] Jan 27, 2021 11:02:20.481 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "commons-managed" component is activated.
+[14] Jan 27, 2021 11:02:20.496 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-violation" component is activated.
+[14] Jan 27, 2021 11:02:20.526 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminCertEventDetails" component is activated.
+[14] Jan 27, 2021 11:02:20.532 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-systemSettings" component is activated.
+[14] Jan 27, 2021 11:02:20.552 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-sendNotification" component is activated.
+[14] Jan 27, 2021 11:02:20.559 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "getavailableuserstoassign" component is activated.
+[14] Jan 27, 2021 11:02:20.568 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "commons-workflow" component is activated.
+[14] Jan 27, 2021 11:02:20.587 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "removeRepoPathFromRelationships" component is activated.
+[14] Jan 27, 2021 11:02:20.619 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-policyScan" component is activated.
+[14] Jan 27, 2021 11:02:20.641 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-getRelationshipObjects" component is activated.
+[14] Jan 27, 2021 11:02:20.651 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-dashboard" component is activated.
+[14] Jan 27, 2021 11:02:20.673 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "getprocessesforuser" component is activated.
+[14] Jan 27, 2021 11:02:20.679 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-activePolicyScan" component is activated.
+[14] Jan 27, 2021 11:02:20.683 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "oauthproxy" component is activated.
+[14] Jan 27, 2021 11:02:20.703 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-managedObjectConfig" component is activated.
+[14] Jan 27, 2021 11:02:20.709 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminCertification" component is activated.
+[14] Jan 27, 2021 11:02:20.719 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-expressionParser" component is activated.
+[14] Jan 27, 2021 11:02:20.742 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "commons-config" component is activated.
+[14] Jan 27, 2021 11:02:20.744 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "linkedView" component is activated.
+[14] Jan 27, 2021 11:02:20.766 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminCancelCert" component is activated.
+[14] Jan 27, 2021 11:02:20.797 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminDashboard" component is activated.
+[14] Jan 27, 2021 11:02:20.866 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-certification" component is activated.
+[14] Jan 27, 2021 11:02:20.908 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-certificationList" component is activated.
+[14] Jan 27, 2021 11:02:20.927 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "gettasksview" component is activated.
+[14] Jan 27, 2021 11:02:20.944 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-notification" component is activated.
+[14] Jan 27, 2021 11:02:20.951 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "idg-adminCertList" component is activated.
+[14] Jan 27, 2021 11:02:20.972 PM org.forgerock.openidm.customendpoint.impl.EndpointsService activate
+INFO: OpenIDM Endpoints Service "mappingDetails" component is activated.
+[14] Jan 27, 2021 11:02:21.052 PM org.forgerock.openidm.policy.PolicyService activate
+INFO: OpenIDM Policy Service component is activated.

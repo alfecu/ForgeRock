@@ -1,0 +1,33 @@
+{
+	"identity": [
+		"attributeName",
+		"certifiable"
+	],
+	"identity-value": [
+		"attributeName",
+		"attributeValue"
+	],
+	"object": [
+		"displayName",
+		"requestable",
+		"entitlementOwner",
+		"riskLevel"
+	],
+	"system": [
+		"name",
+		"riskLevel",
+		"entitlementOwner",
+		"certifiable"
+	],
+	"system-attribute": [
+		"system",
+		"attributeName",
+		"objectType"
+	],
+	"system-value": [
+		"system",
+		"attributeName",
+		"attributeValue",
+		"objectType"
+	]
+}

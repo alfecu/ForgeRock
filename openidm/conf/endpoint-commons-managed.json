@@ -1,0 +1,5 @@
+{
+  "file" : "commons/managed.js",
+  "context": "commons/managed/*",
+  "type" : "text/javascript"
+}

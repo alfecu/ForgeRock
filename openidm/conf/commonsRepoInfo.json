@@ -1,0 +1,10 @@
+{
+    "version": {
+        "commit": "be0ab63772214d6fcf85b56f25931e3ab8b14f35", 
+        "major": 1, 
+        "branch": "origin/1.1.3/dev", 
+        "minor": 1, 
+        "patch": 3
+    }, 
+    "_id": "commonsRepoInfo"
+}

@@ -1,0 +1,235 @@
+=====================================
+== Access Review - Open Source Copyrights ==
+=====================================
+
+date-io/moment 1.3.13
+======================
+Licensed under the MIT License
+Source code can be found at: https://github.com/dmtrKovalenko/date-io
+License terms can be found at: https://github.com/dmtrKovalenko/date-io/blob/master/LICENSE
+Copyright (c) 2017 Dmitriy Kovalenko
+
+material-ui/core 4.0.2
+=======================
+Licensed under the MIT License
+Source code can be found at: https://github.com/mui-org/material-ui
+License terms can be found at: https://github.com/mui-org/material-ui/blob/next/LICENSE
+Copyright (c) 2014 Call-Em-All
+
+material-ui/icons 4.0.1
+========================
+Licensed under the MIT License
+Source code can be found at: https://github.com/mui-org/material-ui
+License terms can be found at: https://github.com/mui-org/material-ui/blob/next/LICENSE
+Copyright (c) 2014 Call-Em-All
+
+material-ui/lab 4.0.0-alpha.24
+===============================
+Licensed under the MIT License
+Source code can be found at: https://github.com/mui-org/material-ui
+License terms can be found at: https://github.com/mui-org/material-ui/blob/next/LICENSE
+Copyright (c) 2014 Call-Em-All
+
+material-ui/pickers 4.0.2
+==========================
+Licensed under the MIT License
+Source code can be found at: https://github.com/mui-org/material-ui
+License terms can be found at: https://github.com/mui-org/material-ui/blob/next/LICENSE
+Copyright (c) 2014 Call-Em-All
+
+axios 0.18.1 
+=============
+Licensed under the MIT License
+Source code can be found at: https://github.com/axios/axios
+License terms can be found at: https://github.com/axios/axios/blob/master/LICENSE
+Copyright (c) 2014-present Matt Zabriskie
+
+c3 0.7.15
+==========
+Licensed under the MIT License
+Source code can be found at: https://github.com/c3js/c3
+License terms can be found at: https://github.com/c3js/c3/blob/master/LICENSE
+Copyright (c) 2013 Masayuki Tanaka
+
+check-types 8.0.3
+==================
+Licensed under the MIT License
+Source code can be found at: https://gitlab.com/philbooth/check-types.js
+License terms can be found at: https://gitlab.com/philbooth/check-types.js/-/blob/master/COPYING
+Copyright © 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Phil Booth
+
+core-js 3.1.4
+==============
+Licensed under the MIT License
+Source code can be found at: https://github.com/zloirock/core-js#readme
+License terms can be found at: https://github.com/zloirock/core-js/blob/master/LICENSE
+Copyright (c) 2014-2020 Denis Pushkarev
+
+formik 1.5.7
+=============
+Licensed under the Apache 2.0 License
+Source code can be found at: https://github.com/formik/formik#readme
+License terms can be found at: https://github.com/formik/formik/blob/master/LICENSE
+Copyright 2020 Formik, Inc.
+
+i18next 15.0.9
+===============
+Licensed under the MIT License
+Source code can be found at: https://github.com/i18next/i18next
+License terms can be found at: https://github.com/i18next/i18next/blob/master/LICENSE
+Copyright (c) 2017 i18next
+
+i18next-browser-languagedetector 3.0.1
+=======================================
+Licensed under the MIT License
+Source code can be found at: https://github.com/i18next/i18next-browser-languageDetector
+License terms can be found at: https://github.com/i18next/i18next-browser-languageDetector/blob/master/LICENSE
+Copyright (c) 2015 i18next
+
+moment 2.24.0
+==============
+Licensed under the MIT License
+Source code can be found at: https://github.com/moment/moment
+License terms can be found at: https://github.com/moment/moment/blob/develop/LICENSE
+Copyright (c) JS Foundation and other contributors
+
+notistack 0.9.5
+================
+Licensed under the MIT License
+Source code can be found at: https://github.com/iamhosseindhv/notistack
+License terms can be found at: https://github.com/iamhosseindhv/notistack/blob/master/LICENSE.md
+Copyright (c) © 2018-2020 Hossein Dehnokhalaji
+
+prop-types 15.7.2
+==================
+Licensed under the MIT License
+Source code can be found at: https://github.com/facebook/prop-types
+License terms can be found at: https://github.com/facebook/prop-types/blob/master/LICENSE
+Copyright (c) 2013-present, Facebook, Inc.
+
+query-string 6.12.1
+====================
+Licensed under the MIT License
+Source code can be found at: https://github.com/sindresorhus/query-string#readme
+License terms can be found at: https://github.com/sindresorhus/query-string/blob/master/license
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (http://sindresorhus.com)
+
+react 16.8.4
+=============
+Licensed under the MIT License
+Source code can be found at: https://github.com/facebook/react
+License terms can be found at: https://github.com/facebook/react/blob/master/LICENSE
+Copyright (c) Facebook, Inc. and its affiliates.
+
+react-c3js 0.1.20
+==================
+Licensed under the MIT License
+Source code can be found at: https://github.com/bcbcarl/react-c3js
+License terms can be found at: https://github.com/bcbcarl/react-c3js/blob/master/LICENSE
+Copyright (c) 2015 - 2016 Carl X. Su
+
+react-dom 16.8.4
+==================
+Licensed under the MIT License
+Source code can be found at: https://github.com/facebook/react
+License terms can be found at: https://github.com/facebook/react/blob/master/LICENSE
+Copyright (c) Facebook, Inc. and its affiliates.
+
+react-i18next 10.6.1
+=====================
+Licensed under the MIT License
+Source code can be found at: https://github.com/i18next/react-i18next
+License terms can be found at: https://github.com/i18next/react-i18next/blob/master/LICENSE
+Copyright (c) 2015 i18next
+
+react-redux 6.0.1
+==================
+Licensed under the MIT License
+Source code can be found at: https://github.com/reduxjs/react-redux
+License terms can be found at: https://github.com/reduxjs/react-redux/blob/master/LICENSE.md
+Copyright (c) 2015-present Dan Abramov
+
+react-select 3.0.4
+===================
+Licensed under the MIT License
+Source code can be found at: https://github.com/JedWatson/react-select
+License terms can be found at: https://github.com/JedWatson/react-select/blob/master/LICENSE
+Copyright (c) 2018 Jed Watson
+
+react-table 7.0.0-beta.12
+==========================
+Licensed under the MIT License
+Source code can be found at: https://github.com/tannerlinsley/react-table
+License terms can be found at: https://github.com/tannerlinsley/react-table/blob/master/LICENSE
+Copyright (c) 2016 Tanner Linsley
+
+redux 4.0.1
+============
+Licensed under the MIT License
+Source code can be found at: https://github.com/reduxjs/redux
+License terms can be found at: https://github.com/reduxjs/redux/blob/master/LICENSE.md
+Copyright (c) 2015-present Dan Abramov
+
+redux-storage 4.1.2
+====================
+Licensed under the MIT License
+Source code can be found at: https://github.com/react-stack/redux-storage
+License terms can be found at: https://github.com/react-stack/redux-storage/blob/master/LICENSE.txt
+Copyright (c) 2016- Gunjan Soni <gunjan.soni2002@gmail.com> 
+Copyright (c) 2015-2016 Michael Contento <mail@michaelcontento.de> 
+
+redux-storage-engine-localstorage 1.1.4
+========================================
+Licensed under the MIT License
+Source code can be found at: https://github.com/react-stack/redux-storage-engine-localstorage
+License terms can be found at: https://github.com/react-stack/redux-storage-engine-localstorage/blob/master/LICENSE.txt
+Copyright (c) 2016- Gunjan Soni <gunjan.soni2002@gmail.com> 
+Copyright (c) 2015-2016 Michael Contento <mail@michaelcontento.de> 
+
+redux-thunk 2.3.0
+==================
+Licensed under the MIT License
+Source code can be found at: https://github.com/reduxjs/redux-thunk
+License terms can be found at: https://github.com/reduxjs/redux-thunk/blob/master/LICENSE.md
+Copyright (c) 2015-present Dan Abramov
+
+tabler-react 2.0.0-alpha.1
+===========================
+Licensed under the MIT License
+Source code can be found at: https://github.com/tabler/tabler-react
+License terms can be found at: https://github.com/tabler/tabler-react/blob/master/LICENSE
+Copyright (c) 2019 Aaron Coplan
+Copyright (c) 2019 Jon Thompson
+
+typeface-roboto 0.0.54
+=======================
+Licensed under the MIT License
+Source code can be found at: https://github.com/KyleAMathews/typefaces/tree/master/packages/roboto
+
+uuid 7.0.2
+===========
+Licensed under the MIT License
+Source code can be found at: https://github.com/uuidjs/uuid
+License terms can be found at: https://github.com/uuidjs/uuid/blob/master/LICENSE.md
+Copyright (c) 2010-2020 Robert Kieffer and other contributors
+
+yup 0.28.1
+============
+Licensed under the MIT License
+Source code can be found at: https://github.com/jquense/yup
+License terms can be found at: https://github.com/jquense/yup/blob/master/LICENSE.md
+Copyright (c) 2014 Jason Quense
+
+Lodash 4.17.15
+===============
+Licensed under the MIT License
+Source code can be found at: https://github.com/lodash/lodash
+License terms can be found at: https://github.com/lodash/lodash/blob/master/LICENSE
+Copyright JS Foundation and other contributors <https://js.foundation/>
+
+Apache Commons CSV 1.7
+==================
+Licensed under the Apache 2.0 License
+Source code can be found at: https://github.com/apache/commons-csv
+License terms can be found at: https://raw.githubusercontent.com/apache/commons-csv/master/LICENSE.txt
+Copyright © 2019 The Apache Software Foundation

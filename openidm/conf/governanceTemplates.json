@@ -1,0 +1,233 @@
+{
+  "_id": "governanceTemplates",
+    "CERTIFICATION_ESCALATED" : {
+        "_id" : "CERTIFICATION_ESCALATED",
+        "displayName" : "Certification Escalated",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task(s) Escalation",
+        "type" : "text/html",
+        "body" : "<html><body>One or more certification tasks for $x.certificationName - $x.stageName have been escalated to you.  Please ensure the asignees below complete their tasks by the deadline.  Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> to review the certification task(s).<br><br>$x.data</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_ESCALATED" : {
+        "_id" : "OBJECT_CERTIFICATION_ESCALATED",
+        "displayName" : "Object Certification Escalated",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Escalation",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for object certification $x.certificationName has been escalated to you.  Please ensure the assignee, ${x.certifier}, completes the task before it expires due to inactivity.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> to review the certification task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_EXPIRED" : {
+        "_id" : "CERTIFICATION_EXPIRED",
+        "displayName" : "Certification Expired",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Expiration of Certification Task",
+        "type" : "text/html",
+        "body" : "<html><body>Your certification task for $x.certificationName has expired due to inactivity.</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_EXPIRED" : {
+        "_id" : "OBJECT_CERTIFICATION_EXPIRED",
+        "displayName" : "Object Certification Expired",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Expiration of Certification Task",
+        "type" : "text/html",
+        "body" : "<html><body>Your certification task for $x.certificationName has expired due to inactivity.</body></html>",
+        "enabled" : true
+    },
+    "CREATE_VIOLATION" : {
+        "_id" : "CREATE_VIOLATION",
+        "displayName" : "Policy Violation Detected",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Policy Violation Detected",
+        "type" : "text/html",
+        "body" : "<html><body>A policy violation, with name: <b>$x.name</b>, has been detected for the user ($x.user) and has been assigned to you. </body></html>",
+        "enabled" : true
+    },
+    "VIOLATION_EXPIRED" : {
+        "_id" : "VIOLATION_EXPIRED",
+        "displayName" : "Policy Violation Expired",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Policy Violation Expired",
+        "type" : "text/html",
+        "body" : "<html><body>A policy violation has expired for the user ($x.user)</body></html>",
+        "enabled" : true
+    },
+    "EXCEPTION_EXPIRED" : {
+        "_id" : "EXCEPTION_EXPIRED",
+        "displayName" : "Policy Exception Expired",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Policy Exception Expired",
+        "type" : "text/html",
+        "body" : "<html><body>A policy exception has expired for the user ($x.user)</body></html>",
+        "enabled" : true
+    },
+    "VIOLATION_ESCALATED" : {
+        "_id" : "VIOLATION_ESCALATED",
+        "displayName" : "Policy Violation Escalated",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Policy Violation Escalated",
+        "type" : "text/html",
+        "body" : "<html><body>A policy violation has escalated. The violation is on the user ($x.user) and the owner is ($x.owner)</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_ADHOC" : {
+        "_id" : "CERTIFICATION_CREATED_ADHOC",
+        "displayName" : "Certification Creation Adhoc",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was assigned to you during an ad hoc certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification Task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_ADHOC_DEFAULT_CERTIFIER" : {
+        "_id" : "CERTIFICATION_CREATED_ADHOC_DEFAULT_CERTIFIER",
+        "displayName" : "Certification Creation Adhoc Default Certifier",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was <b>defaulted</b> to you during an ad hoc certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification Task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_SCHEDULED" : {
+        "_id" : "CERTIFICATION_CREATED_SCHEDULED",
+        "displayName" : "Certification Creation Scheduled",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was assigned to you during a scheduled certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_SCHEDULED_DEFAULT_CERTIFIER" : {
+        "_id" : "CERTIFICATION_CREATED_SCHEDULED_DEFAULT_CERTIFIER",
+        "displayName" : "Certification Creation Scheduled Default Certifier",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was <b>defaulted</b> to you during a scheduled certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_TRIGGERED" : {
+        "_id" : "CERTIFICATION_CREATED_TRIGGERED",
+        "displayName" : "Certification Creation Triggered",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was assigned to you during a triggered certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CREATED_TRIGGERED_DEFAULT_CERTIFIER" : {
+        "_id" : "CERTIFICATION_CREATED_TRIGGERED_DEFAULT_CERTIFIER",
+        "displayName" : "Certification Creation Triggered Default Certifier",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>A certification task for $x.certificationName was <b>defaulted</b> to you during a triggered certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_CREATED_ADHOC" : {
+        "_id" : "OBJECT_CERTIFICATION_CREATED_ADHOC",
+        "displayName" : "Object Certification Creation Adhoc",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Object Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>An object certification task for $x.certificationName was assigned to you during an ad hoc certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_CREATED_SCHEDULED" : {
+        "_id" : "CERTIFICATION_CREATED_SCHEDULED",
+        "displayName" : "Object Certification Creation Scheduled",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Object Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>An object certification task for $x.certificationName was assigned to you during a scheduled certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_CREATED_TRIGGERED" : {
+        "_id" : "CERTIFICATION_CREATED_TRIGGERED",
+        "displayName" : "Object Certification Creation Triggered",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Object Certification Task Assigned",
+        "type" : "text/html",
+        "body" : "<html><body>An object certification task for $x.certificationName was assigned to you during a triggered certification campaign.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> as soon as you are able to review and complete the certification task.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CANCELLED" : {
+        "_id" : "CERTIFICATION_CANCELLED",
+        "displayName" : "Certification Cancelled",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Cancellation of Certification Task",
+        "type" : "text/html",
+        "body" : "<html><body>A certification for $x.certificationName with a task assigned to you has been cancelled.</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_COMPLETED" : {
+        "_id" : "CERTIFICATION_COMPLETED",
+        "displayName" : "Certification Completion",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Certification Task Completed",
+        "type" : "text/html",
+        "body" : "<html><body>Your certification task for $x.certificationName has been completed.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> to review.</body></html>",
+        "enabled" : true
+    },
+    "OBJECT_CERTIFICATION_COMPLETED" : {
+        "_id" : "OBJECT_CERTIFICATION_COMPLETED",
+        "displayName" : "Object Certification Completion",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "Certification Task Completed",
+        "type" : "text/html",
+        "body" : "<html><body>Your certification task for $x.certificationName has been completed.<br><br>Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> to review.</body></html>",
+        "enabled" : true
+    },
+    "POLICY_EXCEPTION" : {
+        "_id" : "POLICY_EXCEPTION",
+        "displayName" : "Policy Exception",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "You have approved a violation",
+        "type" : "text/html",
+        "body" : "<html><body>You have approved a violation for policy: ${x.name}. Please log into <a href=\\\"http://$x.hostName/governance/\\\">FRGovernance</a> to view other policy violations</body></html>",
+        "enabled" : true
+    },
+    "POLICY_REMEDIATION" : {
+        "_id" : "POLICY_REMEDIATION",
+        "displayName" : "Policy Remediated",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "You removed access",
+        "type" : "text/html",
+        "body" : "<html><body>Remediation action has been taken on the policy violation: ${x.name}</body></html>",
+        "enabled" : true
+    },
+    "CERTIFICATION_CANCELLATION_FAILURE" : {
+        "_id" : "CERTIFICATION_CANCELLATION_FAILURE",
+        "displayName" : "Certification Cancellation Failure",
+        "from" : "governanceNotifier@forgerock.com",
+        "to" : "${x.toEmailAddress}",
+        "subject" : "ATTENTION: Certification Cancellation Failure for ${x.campaignName}",
+        "type" : "text/html",
+        "body" : "<html><body>Failure occurred for certification campaign ${x.campaignName}. Please take appropriate action.</body></html>",
+        "enabled" : true
+    }
+}

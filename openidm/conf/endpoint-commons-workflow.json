@@ -1,0 +1,5 @@
+{
+  "file" : "commons/workflow.js",
+  "context": "commons/workflow/*",
+  "type" : "text/javascript"
+}
