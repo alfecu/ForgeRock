@@ -1,6 +1,6 @@
 {
     "configuration" : {
-        "selfRegistration" : false,
+        "selfRegistration" : true,
         "passwordReset" : true,
         "forgotUsername" : true,
         "lang" : "en",
@@ -26,6 +26,7 @@
         "defaultNotificationType" : "info",
         "kbaVerificationEnabled" : true,
         "kbaEnabled" : true,
-        "logoutUrl" : ""
+        "logoutUrl" : "",
+        "kbaDefinitionEnabled" : true
     }
 }

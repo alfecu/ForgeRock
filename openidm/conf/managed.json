@@ -930,7 +930,6 @@
                 "title" : "Role",
                 "icon" : "fa-check-square",
                 "mat-icon" : "assignment_ind",
-                "description" : "",
                 "properties" : {
                     "_id" : {
                         "description" : "Role ID",
@@ -1103,6 +1102,14 @@
                     "condition",
                     "temporalConstraints"
                 ]
+            },
+            "postCreate" : {
+                "type" : "groovy",
+                "globals" : {
+                    "mappingName" : "managedUser_systemO365platform__ACCOUNT__",
+                    "assignmentEndPoint" : "managed/assignment"
+                },
+                "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nfinal Logger logger = LoggerFactory.getLogger(\"Roles\");\n\nlogger.info(\"**** <assignedPlans.person >\" + newObject.displayName)\n\ndef data = [\n   \"name\" : \"TI_\" + newObject.name + \"_Assignment\",\n   \"description\": \"Assignment for \" + newObject.name + \" role.\",\n   \"mapping\" : mappingName,\n   \"attributes\": [\n      [\n        \"name\": \"memberOf\",\n        \"value\": [\n       \t\tnewObject._id\n        ],\n        \"assignmentOperation\" : \"mergeWithTarget\",\n        \"unassignmentOperation\" : \"removeFromTarget\"\n      ]\n   ],\n   \"roles\" : [\n     [\n       \"_ref\" : \"managed/role/\" + newObject._id  \n     ]\n   ]\n]\n\ndef assignmentObject = openidm.create(assignmentEndPoint, null, data)\n"
             }
         },
         {
@@ -1838,7 +1845,7 @@
             "postUpdate" : {
                 "type" : "text/javascript",
                 "globals" : { },
-                "source" : "\nvar TenantID = '164f115d-c647-4c73-8e9a-61cb40f01927';\nvar ClientSecret = 'pCT-ARkcoP.0j6_mT8Y.uX0JYPF1_azf74';\nvar ClientID = '704b6124-7a7d-4001-ad03-fe181b7a7fe6';\nvar _url = \"https://login.microsoftonline.com/\" + TenantID + \"/oauth2/v2.0/token\";\nvar connection = {\n    \"url\": _url,\n    \"method\": \"POST\",\n    \"headers\": {\n      \"Content-Type\": \"application/x-www-form-urlencoded\"\n    },\n    \"forceWrap\" : true,\n    \"body\": \"grant_type=client_credentials&client_id=\"+ClientID+\"&client_secret=\"+ClientSecret+\"&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default\"\n};\ntry {\n  logger.info(\"connection: {}\",connection);\n  var RESTResult = openidm.action(\"external/rest\",\"call\", connection);\n  logger.info(\"RESTResult ================================================== \");\n  logger.info(\"RESTResult: {}\",RESTResult);\n  logger.info(\"RESTResult ================================================== \");\n}\ncatch (e) {\n  logger.info(\"ERROR ================================================== \");\n  if (e.javaException.getCode() == \"201\"){ \n    logger.info(\"CODE HTTP: 201\")\n  } else if (e.javaException.getCode() == \"400\") {\n    logger.info(\"CODE HTTP: 400\") ;\n  }\n  logger.info(\"Error Detail: {}\",e);\n  logger.info(\"ERROR ================================================== \");\n}"
+                "source" : "var TenantID = '164f115d-c647-4c73-8e9a-61cb40f01927';\nvar ClientSecret = 'pCT-ARkcoP.0j6_mT8Y.uX0JYPF1_azf74';\nvar ClientID = '704b6124-7a7d-4001-ad03-fe181b7a7fe6';\nvar _url = \"https://login.microsoftonline.com/\" + TenantID + \"/oauth2/v2.0/token\";\nvar connection = {\n    \"url\": _url,\n    \"method\": \"POST\",\n    \"headers\": {\n      \"Content-Type\": \"application/x-www-form-urlencoded\"\n    },\n    \"forceWrap\" : true,\n    \"body\": \"grant_type=client_credentials&client_id=\"+ClientID+\"&client_secret=\"+ClientSecret+\"&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default\"\n};\ntry {\n  logger.info(\"connection: {}\",connection);\n  var RESTResult = openidm.action(\"external/rest\",\"call\", connection);\n  logger.info(\"RESTResult ================================================== \");\n  logger.info(\"RESTResult: {}\",RESTResult);\n  logger.info(\"RESTResult ================================================== \");\n}\ncatch (e) {\n  logger.info(\"ERROR ================================================== \");\n  if (e.javaException.getCode() == \"201\"){ \n    logger.info(\"CODE HTTP: 201\")\n  } else if (e.javaException.getCode() == \"400\") {\n    logger.info(\"CODE HTTP: 400\") ;\n  }\n  logger.info(\"Error Detail: {}\",e);\n  logger.info(\"ERROR ================================================== \");\n}\n\nlogger.info(\"oldObject: {}\", oldObject);\n\nif (oldObject.capabilityStatus  != newObject.capabilityStatus )\n{\n  // change the plan\n  var data = {\n  \"addLicenses\": [\n    {\n       \n      \"skuId\": \"f245ecc8-75af-4f8e-b61f-27d8114de5f3\"\n    }\n  ]\n}\n//\tvar user_read = openidm.read('managed/user/' + source._id);\n//user_read['description'] = 'The entry has been updated';\n//openidm.update('managed/user/' + source._id, null, user_read);\n\n  \n  }\n\n"
             }
         },
         {

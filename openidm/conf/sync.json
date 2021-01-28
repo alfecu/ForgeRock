@@ -228,6 +228,10 @@
                         "source" : "if (source != null) {\n  def members = []\n  source.members.each { userId ->\n      //String queryFilter = \"/_id eq \\\"\" + userId + \"\\\"\"\n      //def memberUserObj = openidm.query(\"managed/user\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      members << [\"_ref\": \"managed/user/\" + userId] // memberUserObj.result[0]._id]\n  }\n\n  return members\n}\n"
                     },
                     "source" : ""
+                },
+                {
+                    "target" : "_id",
+                    "source" : "_id"
                 }
             ],
             "policies" : [
