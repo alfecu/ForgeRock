@@ -1,0 +1,312 @@
+{
+    "connectorRef" : {
+        "connectorHostRef" : "#LOCAL",
+        "connectorName" : "org.forgerock.openicf.connectors.scriptedrest.ScriptedRESTConnector",
+        "bundleName" : "org.forgerock.openicf.connectors.scriptedrest-connector",
+        "bundleVersion" : "[1.5.0.0,1.6.0.0)"
+    },
+    "poolConfigOption" : {
+        "maxObjects" : 10,
+        "maxIdle" : 10,
+        "maxWait" : 150000,
+        "minEvictableIdleTimeMillis" : 120000,
+        "minIdle" : 1
+    },
+    "operationTimeout" : {
+        "CREATE" : -1,
+        "UPDATE" : -1,
+        "DELETE" : -1,
+        "TEST" : -1,
+        "SCRIPT_ON_CONNECTOR" : -1,
+        "SCRIPT_ON_RESOURCE" : -1,
+        "GET" : -1,
+        "RESOLVEUSERNAME" : -1,
+        "AUTHENTICATE" : -1,
+        "SEARCH" : -1,
+        "VALIDATE" : -1,
+        "SYNC" : -1,
+        "SCHEMA" : -1
+    },
+    "resultsHandlerConfig" : {
+        "enableNormalizingResultsHandler" : true,
+        "enableFilteredResultsHandler" : true,
+        "enableCaseInsensitiveFilter" : false,
+        "enableAttributesToGetSearchResultsHandler" : true
+    },
+    "configurationProperties" : {
+        "serviceAddress" : "https://comp01.cybr.com",
+        "proxyAddress" : null,
+        "username" : "forgerock",
+        "password" : {
+            "$crypto" : {
+                "type" : "x-simple-encryption",
+                "value" : {
+                    "cipher" : "AES/CBC/PKCS5Padding",
+                    "stableId" : "openidm-sym-default",
+                    "salt" : "2I6YJM1NB/+7hRpqXNClJA==",
+                    "data" : "AW9OImAlqTOm6vTkT32r8w==",
+                    "keySize" : 16,
+                    "purpose" : "idm.config.encryption",
+                    "iv" : "bnuoqjUIUKmDYTQ0pxj6VQ==",
+                    "mac" : "sqzpq6Shj0K3MhdQlFv/hA=="
+                }
+            }
+        },
+        "defaultAuthMethod" : "BASIC_PREEMPTIVE",
+        "defaultRequestHeaders" : [
+            null
+        ],
+        "defaultContentType" : "application/json",
+        "scriptExtensions" : [
+            "groovy"
+        ],
+        "sourceEncoding" : "UTF-8",
+        "authenticateScriptFileName" : "AuthenticateScript.groovy",
+        "customizerScriptFileName" : "CustomizerScript.groovy",
+        "createScriptFileName" : "CreateScript.groovy",
+        "deleteScriptFileName" : "DeleteScript.groovy",
+        "resolveUsernameScriptFileName" : "ResolveUsernameScript.groovy",
+        "schemaScriptFileName" : "SchemaScript.groovy",
+        "scriptOnResourceScriptFileName" : "ScriptOnResourceScript.groovy",
+        "searchScriptFileName" : "SearchScript.groovy",
+        "testScriptFileName" : "TestScript.groovy",
+        "updateScriptFileName" : "UpdateScript.groovy",
+        "scriptBaseClass" : null,
+        "recompileGroovySource" : false,
+        "minimumRecompilationInterval" : 100,
+        "debug" : false,
+        "verbose" : false,
+        "warningLevel" : 1,
+        "tolerance" : 10,
+        "disabledGlobalASTTransformations" : null,
+        "targetDirectory" : null,
+        "scriptRoots" : [
+            "&{idm.instance.dir}/tools"
+        ]
+    },
+    "objectTypes" : {
+        "group" : {
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "type" : "object",
+            "id" : "__GROUP__",
+            "nativeType" : "__GROUP__",
+            "properties" : {
+                "members" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "object",
+                        "nativeType" : "object"
+                    },
+                    "nativeName" : "members",
+                    "nativeType" : "object"
+                },
+                "id" : {
+                    "type" : "string",
+                    "nativeName" : "id",
+                    "nativeType" : "string",
+                    "required" : true,
+                    "flags" : [ ],
+                    "runAsUser" : false
+                },
+                "groupType" : {
+                    "type" : "string",
+                    "nativeName" : "groupType",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "groupName" : {
+                    "type" : "string",
+                    "nativeName" : "groupName",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "description" : {
+                    "type" : "string",
+                    "nativeName" : "description",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "location" : {
+                    "type" : "string",
+                    "nativeName" : "location",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "directory" : {
+                    "type" : "string",
+                    "nativeName" : "directory",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "dn" : {
+                    "type" : "string",
+                    "nativeName" : "dn",
+                    "nativeType" : "string",
+                    "required" : false
+                }
+            }
+        },
+        "Safe" : {
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "type" : "object",
+            "id" : "safe",
+            "nativeType" : "__SAFE__",
+            "properties" : {
+                "uid" : {
+                    "type" : "string",
+                    "nativeName" : "uid",
+                    "nativeType" : "string",
+                    "flags" : [ ],
+                    "required" : false,
+                    "runAsUser" : false
+                },
+                "safeName" : {
+                    "type" : "string",
+                    "nativeName" : "safeName",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "description" : {
+                    "type" : "string",
+                    "nativeName" : "description",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "location" : {
+                    "type" : "string",
+                    "nativeName" : "location",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "safeUrlId" : {
+                    "type" : "string",
+                    "nativeName" : "safeUrlId",
+                    "nativeType" : "string",
+                    "required" : false
+                }
+            }
+        },
+        "user" : {
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "type" : "object",
+            "id" : "user",
+            "nativeType" : "__USER__",
+            "properties" : {
+                "uid" : {
+                    "type" : "string",
+                    "required" : false,
+                    "nativeName" : "__NAME__",
+                    "nativeType" : "string",
+                    "flags" : [
+                        "NOT_UPDATEABLE"
+                    ],
+                    "runAsUser" : false
+                },
+                "userName" : {
+                    "type" : "string",
+                    "nativeName" : "userName",
+                    "nativeType" : "string",
+                    "flags" : [ ],
+                    "required" : false,
+                    "runAsUser" : false
+                },
+                "password" : {
+                    "type" : "string",
+                    "nativeName" : "password",
+                    "nativeType" : "string",
+                    "flags" : [
+                        "NOT_UPDATEABLE",
+                        "NOT_READABLE",
+                        "NOT_RETURNED_BY_DEFAULT"
+                    ]
+                },
+                "source" : {
+                    "type" : "string",
+                    "nativeName" : "source",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "userType" : {
+                    "type" : "string",
+                    "nativeName" : "userType",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "firstName" : {
+                    "type" : "string",
+                    "nativeName" : "firstName",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "lastName" : {
+                    "type" : "string",
+                    "nativeName" : "lastName",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "groupMemberShip" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "string",
+                        "nativeType" : "string"
+                    },
+                    "nativeName" : "groupMemberShip",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "vaultAuthorization" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "string",
+                        "nativeType" : "string"
+                    },
+                    "nativeName" : "vaultAuthorization",
+                    "nativeType" : "string",
+                    "required" : false
+                }
+            }
+        },
+        "account" : {
+            "$schema" : "http://json-schema.org/draft-03/schema",
+            "type" : "object",
+            "id" : "__ACCOUNT__",
+            "nativeType" : "__ACCOUNT__",
+            "properties" : {
+                "uid" : {
+                    "type" : "string",
+                    "required" : true,
+                    "nativeName" : "__NAME__",
+                    "nativeType" : "string",
+                    "flags" : [
+                        "NOT_UPDATEABLE"
+                    ]
+                },
+                "name" : {
+                    "type" : "string",
+                    "nativeName" : "name",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "address" : {
+                    "type" : "string",
+                    "nativeName" : "address",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "safeName" : {
+                    "type" : "string",
+                    "nativeName" : "safeName",
+                    "nativeType" : "string",
+                    "required" : false
+                },
+                "secretType" : {
+                    "type" : "string",
+                    "nativeName" : "secretType",
+                    "nativeType" : "string",
+                    "required" : false
+                }
+            }
+        }
+    },
+    "enabled" : true
+}

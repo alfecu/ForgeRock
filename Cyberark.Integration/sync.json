@@ -1,0 +1,257 @@
+{
+    "mappings" : [
+        {
+            "target" : "managed/Safes",
+            "source" : "system/CyberArk/Safe",
+            "name" : "systemCyberarkSafe_managedSafes",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "systemCyberarkSafe_managedSafes",
+            "properties" : [
+                {
+                    "source" : "description",
+                    "target" : "description"
+                },
+                {
+                    "source" : "location",
+                    "target" : "location"
+                },
+                {
+                    "source" : "safeName",
+                    "target" : "safeName"
+                },
+                {
+                    "target" : "safeUrlId",
+                    "source" : "safeUrlId"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        },
+        {
+            "target" : "managed/cybrUsers",
+            "source" : "system/CyberArk/user",
+            "name" : "systemCyberarkUser_managedCybrusers",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "systemCyberarkUser_managedCybrusers",
+            "properties" : [
+                {
+                    "source" : "firstName",
+                    "target" : "firstName"
+                },
+                {
+                    "source" : "lastName",
+                    "target" : "lastName"
+                },
+                {
+                    "source" : "source",
+                    "target" : "source"
+                },
+                {
+                    "source" : "userName",
+                    "target" : "userName"
+                },
+                {
+                    "source" : "userType",
+                    "target" : "userType"
+                },
+                {
+                    "target" : "vaultAuthorization",
+                    "transform" : {
+                        "type" : "groovy",
+                        "globals" : { },
+                        "source" : "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\nfinal Logger logger = LoggerFactory.getLogger(\"[CyberArk Authorization]\");\n\ndef rights = []\n\nif (source != null) {\n      source.vaultAuthorization.each { permission ->\n      String queryFilter = \"/authorizationName eq \\\"\" + permission + \"\\\"\"\n      def AuthObj = openidm.query(\"managed/Authorization\", [\"_queryFilter\": queryFilter], [\"_id\"])\n      logger.info(\"[CyberArk Authorization] queryFilter \" + queryFilter)\n      if (AuthObj.resultCount == 1) { \n            logger.info(\"[CyberArk Authorization] vaultAuthorization \" + AuthObj.result[0]._id)\n            rights << [\"_ref\": \"managed/Authorization/\" + AuthObj.result[0]._id]\n            }\n      logger.info(\"[CyberArk Authorization] AuthObj.resultCount {0}\" + AuthObj.resultCount)\n}\nreturn rights\n}"
+                    },
+                    "source" : ""
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        },
+        {
+            "target" : "system/CyberArk/user",
+            "source" : "managed/cybrUsers",
+            "name" : "managedCybrusers_systemCyberarkUser",
+            "consentRequired" : false,
+            "icon" : null,
+            "displayName" : "managedCybrusers_systemCyberarkUser",
+            "properties" : [
+                {
+                    "target" : "firstName",
+                    "source" : "firstName"
+                },
+                {
+                    "target" : "lastName",
+                    "source" : "lastName"
+                },
+                {
+                    "target" : "userName",
+                    "source" : "userName"
+                },
+                {
+                    "target" : "uid",
+                    "source" : "userName"
+                }
+            ],
+            "policies" : [
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "AMBIGUOUS"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "SOURCE_MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "MISSING"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "FOUND_ALREADY_LINKED"
+                },
+                {
+                    "action" : "DELETE",
+                    "situation" : "UNQUALIFIED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "UNASSIGNED"
+                },
+                {
+                    "action" : "EXCEPTION",
+                    "situation" : "LINK_ONLY"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "TARGET_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "SOURCE_IGNORED"
+                },
+                {
+                    "action" : "IGNORE",
+                    "situation" : "ALL_GONE"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "CONFIRMED"
+                },
+                {
+                    "action" : "UPDATE",
+                    "situation" : "FOUND"
+                },
+                {
+                    "action" : "CREATE",
+                    "situation" : "ABSENT"
+                }
+            ]
+        }
+    ]
+}

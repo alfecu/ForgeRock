@@ -1,0 +1,83 @@
+/*
+ * Copyright 2014-2018 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+
+import org.apache.http.client.HttpClient
+import org.forgerock.openicf.connectors.groovy.OperationType
+import org.forgerock.openicf.connectors.scriptedrest.ScriptedRESTConfiguration
+import org.forgerock.openicf.connectors.scriptedrest.SimpleCRESTFilterVisitor
+import org.forgerock.openicf.connectors.scriptedrest.VisitorParameter
+import org.identityconnectors.common.logging.Log
+import org.identityconnectors.framework.common.objects.Attribute
+import org.identityconnectors.framework.common.objects.AttributeUtil
+import org.identityconnectors.framework.common.objects.Name
+import org.identityconnectors.framework.common.objects.ObjectClass
+import org.identityconnectors.framework.common.objects.OperationOptions
+import org.identityconnectors.framework.common.objects.SearchResult
+import org.identityconnectors.framework.common.objects.Uid
+import org.identityconnectors.framework.common.objects.filter.Filter
+import org.identityconnectors.framework.common.objects.filter.EqualsFilter
+
+import groovyx.net.http.HTTPBuilder
+import static groovyx.net.http.ContentType.URLENC
+import static groovyx.net.http.Method.GET
+import static groovyx.net.http.ContentType.*
+
+import groovyx.net.http.RESTClient
+import org.apache.http.auth.AuthScope
+import org.apache.http.auth.UsernamePasswordCredentials
+import org.apache.http.client.CredentialsProvider
+import org.apache.http.client.protocol.HttpClientContext
+import org.apache.http.impl.client.BasicAuthCache
+import org.apache.http.impl.client.BasicCredentialsProvider
+import org.identityconnectors.common.logging.Log
+import org.identityconnectors.common.security.GuardedString
+import org.identityconnectors.common.security.SecurityUtil
+import org.identityconnectors.framework.common.exceptions.ConnectorSecurityException
+import org.identityconnectors.framework.common.exceptions.InvalidCredentialException
+import org.identityconnectors.framework.common.objects.ObjectClass
+import org.identityconnectors.framework.common.objects.OperationOptions
+
+
+def operation = operation as OperationType
+def configuration = configuration as ScriptedRESTConfiguration
+def httpClient = connection as HttpClient
+def connection = customizedConnection as RESTClient
+def filter = filter as Filter
+def log = log as Log
+def objectClass = objectClass as ObjectClass
+def options = options as OperationOptions
+def resultHandler = handler
+//
+// all atrtibutes
+def attributesToGet = options.getAttributesToGet() as String[]
+
+
+
+log.info("[PAM - Search] Entering " + operation + " Script")
+
+def SECRET = new ObjectClass("__SECRET__")
+def CONTAINER = new ObjectClass("__CONTAINER__")
+
+def _searchValue = 0
+def client = new RESTClient(configuration.serviceAddress)
+// Connection with Token
+def site = new HTTPBuilder(configuration.serviceAddress)
+log.info("***************>>>> PASSWORD!!")
+log.info(SecurityUtil.decrypt(configuration.password));
+log.info("***************>>>> IgnoreSSL!!")
+client.ignoreSSLIssues();
+// just support: LOCAL ACCESS
+def response = client.post(
+    path: "/PasswordVault/API/auth/Cyberark/Logon",
+    body: [username: configuration.username, password: SecurityUtil.decrypt(configuration.password)],
+    requestContentType: JSON)
+log.info("***** before response")
+
+def token = response.data;
+log.info("***************>>>> token!!" + token)
+
