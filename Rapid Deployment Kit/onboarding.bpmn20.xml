@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" id="definitions" targetNamespace="Examples" xsi:schemaLocation="              http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+  <process id="onBoarding" name="Employee Onboarding Process" isExecutable="true">
+    <property id="_LCMStatus" name="_LCMStatus" />
+    <property id="_user" name="_user" />
+    <property id="_userID" name="_userID" />    
+    <property id="_configuration" name="_user" />
+    <startEvent id="offboardingStartEvent" />
+    <scriptTask id="prepareTask" name="Prepare Task" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <outgoing>Flow_06nvs0x</outgoing>
+      <script>//patchValue = [[operation: 'replace', field:'description',value:'Forgerock Support']]
+            import java.util.logging.Logger
+            import groovy.json.JsonOutput;
+            Logger logger = Logger.getLogger("")
+            // decision
+            //execution.setVariable("_LCMStatus", execution.getVariable("_LCMStatus"))
+            logger.info("************* Workflow = Preparation Tasks ")
+            // get information about configuration
+
+            def configuration = openidm.query("managed/onboardingconf", ["_queryFilter": '/businessProcess eq "'+_LCMStatus + '"'])
+            if (configuration.resultCount > 0 ){
+              execution.setVariable("_configuration", configuration.userRead)
+              logger.info("************* Workflow configuration " + _configuration)
+            }
+            //logger.info("************* Workflow _LCMStatus = " + execution.getVariable("_LCMStatus"))
+            logger.info("************* Workflow _LCMStatus == " + (_LCMStatus))            
+            //logger.info("************* Workflow _LCMStatus == " + (_LCMStatus == 'mover'))
+            // we have all informacion abour user
+            //logger.info("************* Workflow _user = " + execution.getVariable("_user"))
+            def userRead = openidm.query("managed/user", [ "_queryFilter": "/userName eq \"" + _user.userName  + "\""], ["_id"]);
+            execution.setVariable("_userID", userRead.result[0]._id)
+            logger.info("************* Workflow userID = " + _userID)
+
+
+          </script>
+    </scriptTask>
+    <endEvent id="endevent1" name="End">
+      <incoming>Flow_1ba2y5p</incoming>
+    </endEvent>
+    <sequenceFlow id="flow1" sourceRef="offboardingStartEvent" targetRef="prepareTask" />
+    <exclusiveGateway id="decisionMadeGateway" name="Decision">
+      <incoming>Flow_06nvs0x</incoming>
+      <outgoing>Flow_0w4crqw</outgoing>
+      <outgoing>Flow_187qdh0</outgoing>
+      <outgoing>Flow_0qa7eto</outgoing>
+      <outgoing>Flow_1vl5w36</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="Flow_06nvs0x" sourceRef="prepareTask" targetRef="decisionMadeGateway" />
+    <sequenceFlow id="Flow_0w4crqw" name="Mover Process" sourceRef="decisionMadeGateway" targetRef="ActMover">
+      <conditionExpression xsi:type="tFormalExpression">${(_LCMStatus == 'mover')}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_187qdh0" name="Joiner Process (Initial Password)" sourceRef="decisionMadeGateway" targetRef="ActJoiner">
+      <conditionExpression xsi:type="tFormalExpression">${(_LCMStatus == 'joiner')}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0qa7eto" name="Leaver Process" sourceRef="decisionMadeGateway" targetRef="ActLeaver">
+      <conditionExpression xsi:type="tFormalExpression">${(_LCMStatus == 'leaver')}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1vl5w36" name="Reactive Process" sourceRef="decisionMadeGateway" targetRef="ActReactivate">
+      <conditionExpression xsi:type="tFormalExpression">${(_LCMStatus == 'reactivate')}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0zgqhjw" sourceRef="ActReactivate" targetRef="ticketingSystem" />
+    <sequenceFlow id="Flow_1jiqy7u" sourceRef="ActLeaver" targetRef="ticketingSystem" />
+    <sequenceFlow id="Flow_050jhcx" sourceRef="ActMover" targetRef="ticketingSystem" />
+    <scriptTask id="ActMover" name="Mover" scriptFormat="groovy">
+      <incoming>Flow_0w4crqw</incoming>
+      <outgoing>Flow_050jhcx</outgoing>
+      <script>
+        /*
+        INFO: ************* Workflow _user = [userName:adam.mazurkiewicz, mail:adam.mazurkiewicz@frdpcloud.com, sn:Mazurkiewicz, 
+        givenName:Adam, password:Frdp-2021, accountStatus:active, effectiveRoles:[[_ref:managed/role/8333b068-3fe1-4cf4-9630-df12a04b5a69], 
+        [_ref:managed/role/7cb47c6d-bedd-4fe0-9062-ef2857ad43bc], [_ref:managed/role/8b9121be-47af-4d30-b4ff-5b455d772354]], 
+        effectiveAssignments:[], _id:e7af26db-d5f1-47e0-bce3-363fe5e1a575, _rev:6, lastSync:[managedUser_systemUserrepoAccount:[effectiveAssignments:[], 
+        timestamp:2021-03-30T20:17:31.783320], managedUser_systemEmailAccount:[effectiveAssignments:[], timestamp:2021-04-05T22:25:53.507805]], 
+        jobTitle:ff, preferences:[updates:false, marketing:false]]
+        */
+        import java.util.logging.Logger
+        import groovy.json.JsonOutput;
+        Logger logger = Logger.getLogger("")
+        logger.info("************* Workflow step 2 - Mover Step")
+        </script>
+    </scriptTask>
+    <scriptTask id="ActJoiner" name="Joiner" scriptFormat="groovy">
+      <incoming>Flow_187qdh0</incoming>
+      <outgoing>Flow_1hwsx5e</outgoing>
+      <script>
+            // send initial password depend on configuration
+            import java.util.logging.Logger
+            import groovy.json.JsonOutput;
+            // Joiner data: [userName:ismael.fernandez, givenName:Ismael, sn:Fernandez, mail:Ismael.Fernandez@frdpcloud.com, 
+            // department:Finance, jobTitle:Director System Engineer, 
+            // employeeId:0037, manager:[_ref:managed/user/46b10e6f-31ca-4223-94f6-adebdca702be], accountStatus:Active] 
+            Logger logger = Logger.getLogger("")
+            logger.info("************* Workflow - Initial Password")
+
+          </script>
+          </scriptTask>
+    <scriptTask id="ActLeaver" name="Leaver" scriptFormat="groovy">
+      <incoming>Flow_0qa7eto</incoming>
+      <outgoing>Flow_1jiqy7u</outgoing>
+      <script>import java.util.logging.Logger
+            import groovy.json.JsonOutput;
+
+            Logger logger = Logger.getLogger("")
+            logger.info("************* Workflow step 2 Leaver")</script>
+    </scriptTask>
+    <scriptTask id="ActReactivate" name="Reactivate" scriptFormat="groovy">
+      <incoming>Flow_1vl5w36</incoming>
+      <outgoing>Flow_0zgqhjw</outgoing>
+      <script>import java.util.logging.Logger
+            import groovy.json.JsonOutput;
+
+            Logger logger = Logger.getLogger("")
+            logger.info("************* Workflow step 2 Reactivate")
+          </script>
+    </scriptTask>
+    <scriptTask id="bundleRequest" name="Bundle Request" scriptFormat="groovy">
+      <incoming>Flow_1hwsx5e</incoming>
+      <outgoing>Flow_07c8tqt</outgoing>
+      <script>
+        import java.util.logging.Logger
+        import groovy.json.JsonOutput;
+        Logger logger = Logger.getLogger("")
+        logger.info("************* Workflow step 3 Bundle Request")
+        // get bundlename
+        def adittionalBundles = _configuration?.adittionalBundles
+        logger.info("************* Workflow adittionalBundles =>" + adittionalBundles)
+        logger.info("************* Workflow user =>" + _user)
+        if (adittionalBundles!=null){
+          // search de Glossary
+          def queryFilter = "class eq 'requestable-item-bundle' and name eq \"" + adittionalBundles + "\""
+          def item = openidm.query("repo/glossary", ["_queryFilter": queryFilter], ["_id"])
+          if (item.resultCount > 0 ){
+              def ARItem = [
+                "userIds":[ _userID ],
+                "items":[
+                    [
+                      "itemId": item.result[0]._id, 
+                      "requestType":"add",
+                      "fields": []  	
+                    ]
+                ],
+                "comment": "Bundle"
+              ]
+              def accReq = openidm.create("access-request/request", null,ARItem)
+              logger.info("************* REQUEST a BUNDLE!!")
+          }
+        }
+      </script>
+    </scriptTask>
+    <sequenceFlow id="Flow_1hwsx5e" sourceRef="ActJoiner" targetRef="bundleRequest" />
+    <sequenceFlow id="Flow_07c8tqt" sourceRef="bundleRequest" targetRef="ticketingSystem" />
+    <scriptTask id="ticketingSystem" name="Ticketing System" scriptFormat="groovy">
+      <incoming>Flow_050jhcx</incoming>
+      <incoming>Flow_07c8tqt</incoming>
+      <incoming>Flow_1jiqy7u</incoming>
+      <incoming>Flow_0zgqhjw</incoming>
+      <outgoing>Flow_1ba2y5p</outgoing>
+      <script>import java.util.logging.Logger
+        import groovy.json.JsonOutput;
+
+        Logger logger = Logger.getLogger("")
+        logger.info("************* Ticketing SYSTEM")
+      </script>      
+    </scriptTask>
+    <sequenceFlow id="Flow_1ba2y5p" sourceRef="ticketingSystem" targetRef="endevent1" />
+  </process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess">
+    <bpmndi:BPMNPlane id="BPMNPlane_myProcess" bpmnElement="onBoarding">
+      <bpmndi:BPMNEdge id="Flow_07c8tqt_di" bpmnElement="Flow_07c8tqt">
+        <omgdi:waypoint x="970" y="140" />
+        <omgdi:waypoint x="1060" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hwsx5e_di" bpmnElement="Flow_1hwsx5e">
+        <omgdi:waypoint x="810" y="140" />
+        <omgdi:waypoint x="870" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_050jhcx_di" bpmnElement="Flow_050jhcx">
+        <omgdi:waypoint x="730" y="10" />
+        <omgdi:waypoint x="1110" y="10" />
+        <omgdi:waypoint x="1110" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jiqy7u_di" bpmnElement="Flow_1jiqy7u">
+        <omgdi:waypoint x="730" y="260" />
+        <omgdi:waypoint x="1110" y="260" />
+        <omgdi:waypoint x="1110" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zgqhjw_di" bpmnElement="Flow_0zgqhjw">
+        <omgdi:waypoint x="730" y="370" />
+        <omgdi:waypoint x="1140" y="370" />
+        <omgdi:waypoint x="1140" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vl5w36_di" bpmnElement="Flow_1vl5w36">
+        <omgdi:waypoint x="570" y="175" />
+        <omgdi:waypoint x="570" y="370" />
+        <omgdi:waypoint x="630" y="370" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="543" y="323" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qa7eto_di" bpmnElement="Flow_0qa7eto">
+        <omgdi:waypoint x="570" y="175" />
+        <omgdi:waypoint x="570" y="260" />
+        <omgdi:waypoint x="630" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_187qdh0_di" bpmnElement="Flow_187qdh0">
+        <omgdi:waypoint x="595" y="150" />
+        <omgdi:waypoint x="618" y="150" />
+        <omgdi:waypoint x="618" y="140" />
+        <omgdi:waypoint x="710" y="140" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="622" y="146" width="86" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0w4crqw_di" bpmnElement="Flow_0w4crqw">
+        <omgdi:waypoint x="570" y="125" />
+        <omgdi:waypoint x="570" y="10" />
+        <omgdi:waypoint x="630" y="10" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="581" y="63" width="74" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06nvs0x_di" bpmnElement="Flow_06nvs0x">
+        <omgdi:waypoint x="482" y="150" />
+        <omgdi:waypoint x="545" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow3" bpmnElement="flow1">
+        <omgdi:waypoint x="315" y="207" />
+        <omgdi:waypoint x="430" y="207" />
+        <omgdi:waypoint x="430" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ba2y5p_di" bpmnElement="Flow_1ba2y5p">
+        <omgdi:waypoint x="1160" y="140" />
+        <omgdi:waypoint x="1246" y="140" />
+        <omgdi:waypoint x="1246" y="207" />
+        <omgdi:waypoint x="1282" y="207" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_offboardingStartEvent" bpmnElement="offboardingStartEvent">
+        <omgdc:Bounds x="280" y="190" width="35" height="35" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_prepareTask" bpmnElement="prepareTask">
+        <omgdc:Bounds x="377" y="122" width="105" height="55" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="decisionMadeGateway_di" bpmnElement="decisionMadeGateway" isMarkerVisible="true">
+        <omgdc:Bounds x="545" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="518" y="113" width="43" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0729q4d_di" bpmnElement="ActMover">
+        <omgdc:Bounds x="630" y="-30" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0f9lypj_di" bpmnElement="ActJoiner">
+        <omgdc:Bounds x="710" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kswxda_di" bpmnElement="ActLeaver">
+        <omgdc:Bounds x="630" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1qj2kr6_di" bpmnElement="ActReactivate">
+        <omgdc:Bounds x="630" y="330" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="bundleRequest_di" bpmnElement="bundleRequest">
+        <omgdc:Bounds x="870" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ticketingSystem_di" bpmnElement="ticketingSystem">
+        <omgdc:Bounds x="1060" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_endevent1" bpmnElement="endevent1">
+        <omgdc:Bounds x="1282" y="189" width="35" height="35" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1327" y="200" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
